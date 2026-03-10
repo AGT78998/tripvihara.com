@@ -161,7 +161,7 @@
       width: 100%;
       height: 100vh;
       min-height: 600px;
-      background-image: url('9.-Bodh-Gaya-Bihar-cover_900_584 (1).jpg');
+      background-image: url('bodh gaya.jpeg');
       /* ↑ Replace with your own image URL or local path */
       background-size: cover;
       background-position: center 40%;
@@ -346,8 +346,15 @@
     /* ✏️  TO ADD MORE CARDS — duplicate the <article class="dest-card"> block in HTML */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+      gap: 20px;
+    }
+
+    @media (max-width: 1100px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .cards-grid { grid-template-columns: 1fr; }
     }
 
     /* ── Individual card ─────────────────────── */
@@ -364,7 +371,7 @@
 
     /* ✏️  CHANGE CARD IMAGE — set background-image on .card-image */
     .card-image {
-      height: 420px;
+      height: 340px; /* reduced from 420px to suit 4-column layout */
       background-size: cover;
       background-position: center;
       position: relative;
@@ -528,13 +535,423 @@
       .hero-title  { font-size: clamp(2.8rem, 12vw, 4rem); }
       .hero-desc   { font-size: 0.93rem; }
 
-      .cards-grid  { grid-template-columns: 1fr; }
-      .card-image  { height: 340px; }
-
       .section-header { flex-direction: column; align-items: flex-start; }
 
       footer { flex-direction: column; text-align: center; }
     }
+  </style>
+
+  <!-- ============================================================
+    ✂️  NEW CSS — PASTE THIS ENTIRE <style> BLOCK just before your
+        closing </style> tag (right after your existing mobile
+        @media block ends).
+    ============================================================ -->
+  <style>
+
+    /* ============================================================
+       SECTION 1 — TRAVEL OPTIONS
+       Two large clickable cards side by side
+       ============================================================ */
+
+    .travel-options-section {
+      background: var(--dark);
+      padding: 90px 5vw 100px;
+    }
+
+    /* ── Section heading area ── */
+    .travel-options-section .to-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .travel-options-section .to-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--warm-white);
+      text-align: center;
+      margin-bottom: 56px;
+      line-height: 1.2;
+    }
+
+    .travel-options-section .to-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── Two-card row ── */
+    .to-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;           /* razor-thin gap gives a "split panel" feel */
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* ── Individual option card ──
+       ✏️ CHANGE CARD LINK   → href on <a class="to-card">
+       ✏️ CHANGE CARD NUMBER → <span class="to-card-num">
+       ✏️ CHANGE CARD TITLE  → <h3 class="to-card-title">
+       ✏️ CHANGE CARD DESC   → <p class="to-card-desc">
+       ✏️ CHANGE CTA TEXT    → <span class="to-cta">
+    */
+    .to-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 72px 48px 64px;
+      background: var(--mid-dark);
+      border: 1px solid rgba(201,168,76,0.10);
+      overflow: hidden;
+      transition: background 0.45s, border-color 0.45s,
+                  transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    /* Soft gold glow fill on hover */
+    .to-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center,
+        rgba(201,168,76,0.09) 0%,
+        transparent 72%);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    /* Top gold rule that slides in */
+    .to-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.5s cubic-bezier(0.77,0,0.175,1);
+    }
+
+    .to-card:hover {
+      background: #222018;
+      border-color: rgba(201,168,76,0.30);
+      transform: translateY(-4px);
+    }
+    .to-card:hover::before { opacity: 1; }
+    .to-card:hover::after  { transform: scaleX(1); }
+
+    .to-card-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 24px;
+    }
+
+    .to-card-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: var(--warm-white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      transition: color 0.35s;
+    }
+
+    .to-card:hover .to-card-title { color: var(--gold-light); }
+
+    .to-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 300px;
+      margin-bottom: 36px;
+    }
+
+    .to-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 4px;
+      transition: gap 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .to-card:hover .to-cta {
+      gap: 14px;
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    /* Mobile: stack vertically */
+    @media (max-width: 700px) {
+      .to-cards           { grid-template-columns: 1fr; gap: 16px; }
+      .to-card            { padding: 52px 28px; }
+      .to-card-title      { font-size: 2.4rem; }
+    }
+
+
+    /* ============================================================
+       SECTION 2 — INTRODUCTION / DESCRIPTION
+       Matches the reference: light cream background, dark text,
+       centered layout, large bold heading + subheading + 2 paras
+       ============================================================ */
+
+    .intro-section {
+      background: var(--cream);       /* light background — matches reference */
+      color: var(--black);
+      padding: 110px 5vw 120px;
+      text-align: center;
+    }
+
+    /* ✏️ CHANGE MAIN HEADING → <h2 class="intro-heading"> */
+    .intro-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    /* ✏️ CHANGE SUB-HEADING → <p class="intro-sub"> */
+    .intro-sub {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 52px;
+    }
+
+    /* Thin divider rule between heading block and paragraphs */
+    .intro-rule {
+      width: 48px;
+      height: 1px;
+      background: rgba(0,0,0,0.2);
+      margin: 0 auto 52px;
+    }
+
+    .intro-body {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      text-align: left;
+    }
+
+    /* ✏️ CHANGE PARAGRAPHS → both <p class="intro-para"> blocks */
+    .intro-para {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section  { padding: 80px 6vw 90px; }
+      .intro-heading  { font-size: 1.7rem; }
+      .intro-body     { text-align: center; }
+    }
+
+
+    /* ============================================================
+       SECTION 3 — BLOG SECTION
+       "Our Latest Blogs" — 3 tall image cards with title / author /
+       date overlaid on a gradient, matching the reference screenshot
+       ============================================================ */
+
+    .blog-section {
+      background: var(--black);
+      padding: 100px 0 0;         /* no side padding — cards go full bleed */
+    }
+
+    /* ── Blog section header ── */
+    .blog-section-header {
+      text-align: center;
+      padding: 0 5vw 56px;
+    }
+
+    /* ✏️ CHANGE BLOG SECTION HEADING → <h2 class="blog-section-title"> */
+    .blog-section-title {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--warm-white);
+    }
+
+    /* ── Cards row ──
+       ✏️ TO ADD MORE BLOG CARDS:
+          Duplicate the entire <article class="blog-card"> block
+          and update the image, title, author and date.
+    */
+    .blog-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;                     /* zero gap = full-bleed panel look */
+    }
+
+    /* ── Individual blog card ── */
+    .blog-card {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* ✏️ CHANGE CARD IMAGE → src on <img class="blog-card-img"> */
+    .blog-card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    .blog-card:hover .blog-card-img { transform: scale(1.06); }
+
+    /* Dark gradient so text is readable */
+    .blog-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10,8,6,0.92) 0%,
+        rgba(10,8,6,0.45) 45%,
+        rgba(10,8,6,0.08) 100%
+      );
+      transition: background 0.4s;
+    }
+
+    .blog-card:hover .blog-card-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(10,8,6,0.96) 0%,
+        rgba(10,8,6,0.55) 50%,
+        rgba(10,8,6,0.12) 100%
+      );
+    }
+
+    /* Card content anchored to bottom */
+    .blog-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 32px 32px 36px;
+      z-index: 2;
+      text-align: center;
+    }
+
+    /* ✏️ CHANGE BLOG TITLE → <h3 class="blog-card-title"> */
+    .blog-card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      font-weight: 400;
+      color: var(--warm-white);
+      line-height: 1.25;
+      margin-bottom: 14px;
+      transition: color 0.3s;
+    }
+
+    .blog-card:hover .blog-card-title { color: var(--gold-light); }
+
+    /* Author + date meta row */
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ✏️ CHANGE AUTHOR → <span class="blog-card-author"> */
+    .blog-card-author {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(245,240,234,0.75);
+      letter-spacing: 0.03em;
+    }
+
+    .blog-card-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    /* ✏️ CHANGE DATE → <span class="blog-card-date"> */
+    .blog-card-date {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--warm-white);
+      letter-spacing: 0.06em;
+    }
+
+    /* Thin gold line at top of card, revealed on hover */
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      z-index: 3;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.77,0,0.175,1);
+    }
+
+    .blog-card:hover::before { transform: scaleX(1); }
+
+    /* Vertical separator lines between cards */
+    .blog-card + .blog-card {
+      border-left: 1px solid rgba(201,168,76,0.12);
+    }
+
+    /* Mobile: stack to 1 column */
+    @media (max-width: 900px) {
+      .blog-cards-row         { grid-template-columns: 1fr 1fr; }
+      .blog-card              { height: 420px; }
+      .blog-card + .blog-card { border-left: none;
+                                border-top: 1px solid rgba(201,168,76,0.12); }
+    }
+
+    @media (max-width: 560px) {
+      .blog-cards-row { grid-template-columns: 1fr; }
+      .blog-card      { height: 360px; }
+      .blog-card-body { padding: 24px 20px 28px; }
+    }
+
+    /* ============================================================
+       END OF NEW CSS
+       ============================================================ */
   </style>
 </head>
 <body>
@@ -632,7 +1049,7 @@ serene views that attract pilgrims and travelers from across the globe.
     <div class="section-header">
       <div>
         <p class="section-label">Our Destinations</p>
-        <h2 class="section-title">Discover <em>Places</em><br>Worth Exploring</h2>
+        <h2 class="section-title">Discover <em>Bihar</em></h2>
       </div>
     </div>
 
@@ -647,26 +1064,21 @@ serene views that attract pilgrims and travelers from across the globe.
           ✏️ CHANGE CARD IMAGE (Card 1):
              In the style attribute below, replace the URL with your own image.
         -->
-        <div class="card-image" style="background-image: url('file:///C:/Users/vindy/Downloads/9.-Bodh-Gaya-Bihar-cover_900_584.webp');"
+        <div class="card-image" style="background-image: url('litti chokha.jpeg');"
              role="img" aria-label="DESTINATION_NAME landscape"></div>
 
         <div class="card-body">
           <!-- ✏️ CHANGE REGION LABEL (e.g. "Kansai Region • Japan") -->
-          <span class="card-region">Kansai Region &bull; Japan</span>
+          
 
           <!-- ✏️ CHANGE DESTINATION / BLOG TITLE -->
-          <h3 class="card-title">DESTINATION_NAME</h3>
+          <h3 class="card-title">Culinary Experiences</h3>
 
           <!-- ✏️ CHANGE CARD DESCRIPTION -->
-          <p class="card-desc">
-            BLOG_DESCRIPTION — A brief, enticing description of this destination.
-            Mention what travellers will discover and why it's special.
-          </p>
+          
 
           <!-- ✏️ CHANGE BLOG LINK: Set href to the blog post URL -->
-          <a href="/blog/destination-name" class="btn-blog">
-            Read the Blog &nbsp;&#8594;
-          </a>
+          
         </div>
       </article>
       <!-- END CARD 1 -->
@@ -678,26 +1090,18 @@ serene views that attract pilgrims and travelers from across the globe.
       <article class="dest-card">
 
         <!-- ✏️ CHANGE CARD IMAGE (Card 2) -->
-        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80');"
+        <div class="card-image" style="background-image: url('adv.jpeg');"
              role="img" aria-label="DESTINATION_NAME landscape"></div>
 
         <div class="card-body">
           <!-- ✏️ CHANGE REGION LABEL -->
-          <span class="card-region">Kanto Region &bull; Japan</span>
+          
 
           <!-- ✏️ CHANGE DESTINATION / BLOG TITLE -->
-          <h3 class="card-title">DESTINATION_NAME</h3>
+          <h3 class="card-title">Adventure Experiences</h3>
 
           <!-- ✏️ CHANGE CARD DESCRIPTION -->
-          <p class="card-desc">
-            BLOG_DESCRIPTION — A brief, enticing description of this destination.
-            What contrasts, neighbourhoods, and experiences await curious travellers.
-          </p>
-
-          <!-- ✏️ CHANGE BLOG LINK -->
-          <a href="/blog/destination-name-2" class="btn-blog">
-            Read the Blog &nbsp;&#8594;
-          </a>
+          
         </div>
       </article>
       <!-- END CARD 2 -->
@@ -709,32 +1113,316 @@ serene views that attract pilgrims and travelers from across the globe.
       <article class="dest-card">
 
         <!-- ✏️ CHANGE CARD IMAGE (Card 3) -->
-        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80');"
+        <div class="card-image" style="background-image: url('chhath.jpg');"
              role="img" aria-label="DESTINATION_NAME landscape"></div>
 
         <div class="card-body">
           <!-- ✏️ CHANGE REGION LABEL -->
-          <span class="card-region">Kyushu Region &bull; Japan</span>
+          
 
           <!-- ✏️ CHANGE DESTINATION / BLOG TITLE -->
-          <h3 class="card-title">DESTINATION_NAME</h3>
+          <h3 class="card-title">Cultural Experiences</h3>
 
           <!-- ✏️ CHANGE CARD DESCRIPTION -->
-          <p class="card-desc">
-            BLOG_DESCRIPTION — A brief, enticing description of this destination.
-            Describe unique landscapes, traditions, and why visitors keep returning.
-          </p>
-
-          <!-- ✏️ CHANGE BLOG LINK -->
-          <a href="/blog/destination-name-3" class="btn-blog">
-            Read the Blog &nbsp;&#8594;
-          </a>
+          
         </div>
       </article>
       <!-- END CARD 3 -->
 
+
+      <!-- ══════════════════════════════════════
+           CARD 4 — Duplicate this block to add more destinations
+           ✏️ Update: image URL, region label, title, description, link
+           ══════════════════════════════════════ -->
+      <article class="dest-card">
+
+        <!-- ✏️ CHANGE CARD IMAGE (Card 4): replace URL with your own image -->
+        <div class="card-image" style="background-image: url('Rajgir.jpeg');"
+             role="img" aria-label="DESTINATION_NAME landscape"></div>
+
+        <div class="card-body">
+          
+
+          <!-- ✏️ CHANGE DESTINATION / BLOG TITLE (Card 4) -->
+          <h3 class="card-title">Historical Experiences</h3>
+
+          <!-- ✏️ CHANGE CARD DESCRIPTION (Card 4) -->
+          
+        </div>
+      </article>
+      <!-- END CARD 4 -->
+
     </div><!-- .cards-grid -->
   </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       ✂️  PASTE POINT — THREE NEW SECTIONS START BELOW
+       All existing code above this line is untouched.
+       ════════════════════════════════════════════════════════════ -->
+
+
+  <!-- ============================================================
+       SECTION 1 — TRAVEL OPTIONS
+       Two large side-by-side clickable cards.
+       ✏️ HOW TO EDIT:
+          • Card link    → href on each <a class="to-card">
+          • Card number  → <span class="to-card-num">
+          • Card title   → <h3 class="to-card-title">
+          • Card tagline → <p class="to-card-desc">
+          • CTA text     → <span class="to-cta">
+       ============================================================ -->
+  <section class="travel-options-section" id="travel-options">
+
+    <!-- ✏️ CHANGE EYEBROW LABEL -->
+    <p class="to-label">How We Travel</p>
+
+    <!-- ✏️ CHANGE SECTION HEADING -->
+    <h2 class="to-heading">Choose Your <em>Journey</em></h2>
+
+    <div class="to-cards">
+
+      <!-- ═══════════════════════════════
+           CARD 1 — Tailored Travel
+           ✏️ Edit href, title, desc, CTA
+           ═══════════════════════════════ -->
+      <a href="/tailored-travel" class="to-card">
+        <span class="to-card-num">01</span>
+
+        <!-- ✏️ CHANGE CARD TITLE (Card 1) -->
+        <h3 class="to-card-title">Tailored<br>Travel</h3>
+
+        <!-- ✏️ CHANGE CARD DESCRIPTION (Card 1) -->
+        <p class="to-card-desc">
+          A journey built entirely around you — your pace, your interests,
+          your story. Every detail crafted to match your vision.
+        </p>
+
+        <!-- ✏️ CHANGE CTA TEXT (Card 1) -->
+        <span class="to-cta">Design My Trip &nbsp;&#8594;</span>
+      </a>
+      <!-- END CARD 1 -->
+
+      <!-- ═══════════════════════════════
+           CARD 2 — Pre-Decided Tours
+           ✏️ Edit href, title, desc, CTA
+           ═══════════════════════════════ -->
+      <a href="/tours" class="to-card">
+        <span class="to-card-num">02</span>
+
+        <!-- ✏️ CHANGE CARD TITLE (Card 2) -->
+        <h3 class="to-card-title">Pre-Decided<br>Tours</h3>
+
+        <!-- ✏️ CHANGE CARD DESCRIPTION (Card 2) -->
+        <p class="to-card-desc">
+          Thoughtfully curated routes that take the guesswork out of travel.
+          Choose your destination — we'll take care of the rest.
+        </p>
+
+        <!-- ✏️ CHANGE CTA TEXT (Card 2) -->
+        <span class="to-cta">Browse Tours &nbsp;&#8594;</span>
+      </a>
+      <!-- END CARD 2 -->
+
+    </div>
+  </section>
+  <!-- END SECTION 1 — TRAVEL OPTIONS -->
+
+
+  <!-- ============================================================
+       SECTION 2 — INTRODUCTION / DESCRIPTION
+       Light cream background with dark text, centered.
+       ✏️ HOW TO EDIT:
+          • Main heading  → <h2 class="intro-heading">
+          • Sub-heading   → <p class="intro-sub">
+          • Paragraph 1   → first  <p class="intro-para">
+          • Paragraph 2   → second <p class="intro-para">
+       ============================================================ -->
+  <section class="intro-section" id="about">
+
+    <!-- ✏️ CHANGE MAIN HEADING -->
+    <h2 class="intro-heading">
+      Discover India, Your Journey Your Way
+    </h2>
+
+    <!-- ✏️ CHANGE SUB-HEADING (italics, below main heading) -->
+    <p class="intro-sub">
+      Tailor-made travel experiences that bring India to life
+    </p>
+
+    <div class="intro-rule" aria-hidden="true"></div>
+
+    <div class="intro-body">
+
+      <!-- ✏️ CHANGE PARAGRAPH 1 -->
+      <p class="intro-para">
+        India's ancient culture, spiritual heritage, and extraordinary
+        landscapes are celebrated across the world for their depth,
+        diversity, and timeless beauty. From the sacred ghats of Varanasi
+        to the serene monasteries of Ladakh, each corner of the country
+        holds a story waiting to be discovered. Recognised as a cradle of
+        civilisation, India's living traditions are a vibrant expression of
+        its people, customs, and artistry — inviting travellers to explore
+        its history, values, and creativity.
+      </p>
+
+      <!-- ✏️ CHANGE PARAGRAPH 2 -->
+      <p class="intro-para">
+        Trip Vihara, India's premier Cultural and Spiritual Tourism company,
+        is your gateway to immersive, insider experiences that go beyond the
+        ordinary. With an expert team of passionate guides and travel
+        planners, we specialise in crafting unforgettable journeys that
+        bring India's vibrant culture to life — one sacred site, one
+        flavour, and one breathtaking landscape at a time.
+      </p>
+
+    </div>
+  </section>
+  <!-- END SECTION 2 — INTRODUCTION -->
+
+
+  <!-- ============================================================
+       SECTION 3 — BLOG SECTION
+       Full-bleed image cards with title / author / date overlaid.
+       ✏️ HOW TO EDIT:
+          • Section heading  → <h2 class="blog-section-title">
+          • Card image       → src on <img class="blog-card-img">
+          • Blog link        → href on <a> wrapping each .blog-card
+          • Blog title       → <h3 class="blog-card-title">
+          • Author           → <span class="blog-card-author">
+          • Date             → <span class="blog-card-date">
+       ✏️ TO ADD MORE BLOG CARDS:
+          Duplicate any <article class="blog-card"> block inside
+          .blog-cards-row and update image, title, author, date.
+       ============================================================ -->
+  <section class="blog-section" id="blog">
+
+    <div class="blog-section-header">
+      <!-- ✏️ CHANGE BLOG SECTION TITLE -->
+      <h2 class="blog-section-title">Our Latest Blogs</h2>
+    </div>
+
+    <div class="blog-cards-row">
+
+      <!-- ═══════════════════════════════════════════
+           BLOG CARD 1
+           ✏️ Update: href, src, title, author, date
+           ═══════════════════════════════════════════ -->
+      <article class="blog-card">
+        <a href="/blog/blog-post-1" aria-label="Read blog post 1">
+
+          <!-- ✏️ CHANGE BLOG IMAGE (Card 1): update src -->
+          <img
+            class="blog-card-img"
+            src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=900&q=80"
+            alt="BLOG_TITLE cover image"
+            loading="lazy"
+          />
+
+          <div class="blog-card-overlay"></div>
+
+          <div class="blog-card-body">
+
+            <!-- ✏️ CHANGE BLOG TITLE (Card 1) -->
+            <h3 class="blog-card-title">
+              BLOG_TITLE — Your First Blog Heading Goes Here
+            </h3>
+
+            <div class="blog-card-meta">
+              <!-- ✏️ CHANGE AUTHOR (Card 1) -->
+              <span class="blog-card-author">written by Author Name</span>
+              <span class="blog-card-meta-dot" aria-hidden="true"></span>
+              <!-- ✏️ CHANGE DATE (Card 1) -->
+              <span class="blog-card-date">Jan 15, 2025</span>
+            </div>
+
+          </div>
+        </a>
+      </article>
+      <!-- END BLOG CARD 1 -->
+
+      <!-- ═══════════════════════════════════════════
+           BLOG CARD 2
+           ✏️ Update: href, src, title, author, date
+           ═══════════════════════════════════════════ -->
+      <article class="blog-card">
+        <a href="/blog/blog-post-2" aria-label="Read blog post 2">
+
+          <!-- ✏️ CHANGE BLOG IMAGE (Card 2) -->
+          <img
+            class="blog-card-img"
+            src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=900&q=80"
+            alt="BLOG_TITLE cover image"
+            loading="lazy"
+          />
+
+          <div class="blog-card-overlay"></div>
+
+          <div class="blog-card-body">
+
+            <!-- ✏️ CHANGE BLOG TITLE (Card 2) -->
+            <h3 class="blog-card-title">
+              BLOG_TITLE — Your Second Blog Heading Goes Here
+            </h3>
+
+            <div class="blog-card-meta">
+              <!-- ✏️ CHANGE AUTHOR (Card 2) -->
+              <span class="blog-card-author">written by Author Name</span>
+              <span class="blog-card-meta-dot" aria-hidden="true"></span>
+              <!-- ✏️ CHANGE DATE (Card 2) -->
+              <span class="blog-card-date">Feb 3, 2025</span>
+            </div>
+
+          </div>
+        </a>
+      </article>
+      <!-- END BLOG CARD 2 -->
+
+      <!-- ═══════════════════════════════════════════
+           BLOG CARD 3
+           ✏️ Update: href, src, title, author, date
+           ═══════════════════════════════════════════ -->
+      <article class="blog-card">
+        <a href="/blog/blog-post-3" aria-label="Read blog post 3">
+
+          <!-- ✏️ CHANGE BLOG IMAGE (Card 3) -->
+          <img
+            class="blog-card-img"
+            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=900&q=80"
+            alt="BLOG_TITLE cover image"
+            loading="lazy"
+          />
+
+          <div class="blog-card-overlay"></div>
+
+          <div class="blog-card-body">
+
+            <!-- ✏️ CHANGE BLOG TITLE (Card 3) -->
+            <h3 class="blog-card-title">
+              BLOG_TITLE — Your Third Blog Heading Goes Here
+            </h3>
+
+            <div class="blog-card-meta">
+              <!-- ✏️ CHANGE AUTHOR (Card 3) -->
+              <span class="blog-card-author">written by Author Name</span>
+              <span class="blog-card-meta-dot" aria-hidden="true"></span>
+              <!-- ✏️ CHANGE DATE (Card 3) -->
+              <span class="blog-card-date">Mar 20, 2025</span>
+            </div>
+
+          </div>
+        </a>
+      </article>
+      <!-- END BLOG CARD 3 -->
+
+    </div><!-- .blog-cards-row -->
+  </section>
+  <!-- END SECTION 3 — BLOG SECTION -->
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       ✂️  NEW SECTIONS END — footer continues below untouched
+       ════════════════════════════════════════════════════════════ -->
 
 
   <!-- =============================================
