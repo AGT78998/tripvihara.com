@@ -155,24 +155,46 @@
     /* =============================================
        HERO SECTION
        ============================================= */
-    /* ✏️  CHANGE HERO IMAGE — set background-image on .hero */
+    /* ── HERO SLIDESHOW ─────────────────────── */
+
+    /* Full-screen wrapper */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
       min-height: 600px;
-      background-image: url('bodh gaya 2.jpeg');
-      /* ↑ Replace with your own image URL or local path */
-      background-size: cover;
-      background-position: center 40%;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 10vh;
+      overflow: hidden;
     }
 
-    /* Dark gradient overlay for readability */
-    .hero::before {
-      content: '';
+    /* Each slide stacks and fades */
+    /* ✏️ TO CHANGE A SLIDE IMAGE → update style="background-image:url()" on .slide-bg in HTML */
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Background image layer with cinematic zoom */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1);
+      transition: transform 6s ease-out;
+    }
+    .slide.active .slide-bg {
+      transform: scale(1.07);
+    }
+
+    /* Same two overlays as original .hero::before / .hero::after */
+    .slide-overlay-r {
       position: absolute;
       inset: 0;
       background: linear-gradient(
@@ -182,23 +204,31 @@
         rgba(13,13,13,0.1) 100%
       );
     }
-
-    .hero::after {
-      content: '';
+    .slide-overlay-b {
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(13,13,13,0.5) 0%, transparent 50%);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    /* Content block — same position & size as original .hero-content */
+    .slide-content {
+      position: absolute;
+      bottom: 10vh;
+      left: 0;
       padding: 0 5vw;
       max-width: 620px;
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+    }
+    .slide.active .slide-content {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* ✏️  CHANGE DESTINATION NAME — edit <h1 class="hero-title"> text */
-    .hero-eyebrow {
+    /* ✏️ TO CHANGE EYEBROW → edit <p class="slide-eyebrow"> in each slide */
+    .slide-eyebrow {
       font-family: var(--font-body);
       font-size: 0.72rem;
       font-weight: 500;
@@ -206,11 +236,10 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 14px;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.3s forwards;
     }
 
-    .hero-title {
+    /* ✏️ TO CHANGE TITLE → edit <h1 class="slide-title"> in each slide */
+    .slide-title {
       font-family: var(--font-display);
       font-size: clamp(3.5rem, 7vw, 6rem);
       font-weight: 300;
@@ -218,88 +247,71 @@
       letter-spacing: 0.01em;
       color: var(--warm-white);
       margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.5s forwards;
     }
 
-    /* ✏️  CHANGE HERO DESCRIPTION — edit <p class="hero-desc"> text */
-    .hero-desc {
+    /* ✏️ TO CHANGE DESCRIPTION → edit <p class="slide-desc"> in each slide */
+    .slide-desc {
       font-size: 0.98rem;
       font-weight: 300;
       line-height: 1.75;
       color: rgba(245,240,234,0.82);
       max-width: 460px;
       margin-bottom: 36px;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.7s forwards;
     }
 
-    /* ── Explore Button ──────────────────────── */
-    .btn-explore {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+    /* Prev / Next arrows */
+    .slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(13,13,13,0.5);
+      backdrop-filter: blur(6px);
       color: var(--warm-white);
-      border: 1px solid rgba(201, 168, 76, 0.6);
-      padding: 14px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: color 0.35s, border-color 0.35s;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.9s forwards;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+      user-select: none;
     }
+    .slide-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+    .slide-arrow.prev { left: 3vw; }
+    .slide-arrow.next { right: 3vw; }
 
-    .btn-explore::before {
-      content: '';
+    /* Navigation dots */
+    .slide-dots {
       position: absolute;
-      inset: 0;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-      z-index: 0;
-    }
-
-    .btn-explore:hover { color: var(--black); border-color: var(--gold); }
-    .btn-explore:hover::before { transform: scaleX(1); }
-
-    .btn-explore span { position: relative; z-index: 1; }
-
-    .btn-explore .arrow {
-      position: relative;
-      z-index: 1;
-      transition: transform 0.3s;
-    }
-
-    .btn-explore:hover .arrow { transform: translateX(5px); }
-
-    /* ── Scroll indicator ───────────────────── */
-    .scroll-hint {
-      position: absolute;
-      bottom: 32px;
+      bottom: 28px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 2;
+      z-index: 10;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      color: rgba(245,240,234,0.5);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      gap: 10px;
     }
+    .slide-dot {
+      width: 28px;
+      height: 2px;
+      background: rgba(245,240,234,0.3);
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      border: none;
+      padding: 0;
+    }
+    .slide-dot.active { background: var(--gold); width: 44px; }
 
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(201,168,76,0.7), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .slide-title { font-size: clamp(2.8rem, 12vw, 4rem); }
+      .slide-desc  { font-size: 0.93rem; }
+      .slide-arrow { width: 36px; height: 36px; font-size: 0.9rem; }
+      .slide-arrow.prev { left: 12px; }
+      .slide-arrow.next { right: 12px; }
     }
 
     /* =============================================
@@ -993,47 +1005,115 @@
 
 
   <!-- =============================================
-       HERO SECTION
+       HERO SECTION — SLIDESHOW
+       ✏️ Slide image      → style="background-image:url('')" on .slide-bg
+       ✏️ Eyebrow text     → <p class="slide-eyebrow">
+       ✏️ Destination name → <h1 class="slide-title">
+       ✏️ Description      → <p class="slide-desc">
+       ✏️ Add a slide      → duplicate a SLIDE block, raise data-index,
+                             add a dot, set TOTAL_SLIDES+1 in JS
+       ✏️ Change timing    → SLIDE_INTERVAL in the <script> block
        ============================================= -->
-  <section class="hero" role="banner">
-    <!--
-      ✏️ CHANGE HERO IMAGE:
-         Find `.hero` in CSS above, then update `background-image: url('...')`.
-         Use a high-res landscape photo (min 1600px wide recommended).
-    -->
+  <section class="hero" id="hero" role="banner" aria-label="Destination slideshow">
 
-    <div class="hero-content">
-
-      <!-- ✏️ CHANGE DESTINATION NAME -->
-      <h1 class="hero-title">BodhGaya</h1>
-
-      <!-- ✏️ CHANGE HERO DESCRIPTION -->
-      <p class="hero-desc">
-        Bodh Gaya is one of the most sacred spiritual sites in the world
-and an incredibly important part of the cultural identity of
-Buddhism and its followers. It is the place where
-Gautama Buddha attained enlightenment
-under the sacred Bodhi Tree over 2,500 years ago.
-Located in Bihar, the town is home to the
-historic Mahabodhi Temple,
-one of the most important pilgrimage sites in the world.
-Despite its deep spiritual importance, the surrounding area offers
-peaceful monasteries, cultural experiences, local cuisine, and
-serene views that attract pilgrims and travelers from across the globe.
-      </p>
-
-      <!-- ✏️ CHANGE EXPLORE LINK: Set href to your tours or blog page -->
-      <a href="#destinations" class="btn-explore">
-        <span>Explore</span>
-        <span class="arrow" aria-hidden="true">&#8594;</span>
-      </a>
+    <!-- ══ SLIDE 1 — KYOTO ══════════════════════════════════════ -->
+    <div class="slide active" data-index="0">
+      <!-- ✏️ SLIDE 1 IMAGE -->
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&q=85');"></div>
+      <div class="slide-overlay-r"></div>
+      <div class="slide-overlay-b"></div>
+      <div class="slide-content">
+        <p class="slide-eyebrow">Kansai Region &bull; Japan</p><!-- ✏️ SLIDE 1 EYEBROW -->
+        <h1 class="slide-title">Kyoto</h1><!-- ✏️ SLIDE 1 TITLE -->
+        <p class="slide-desc"><!-- ✏️ SLIDE 1 DESCRIPTION -->
+          The ancient capital of Japan, Kyoto is home to 35% of the nation's
+          National Treasures — a timeless city of temples, geisha districts,
+          and sacred gardens that breathe history at every turn.
+        </p>
+      </div>
     </div>
 
-    <!-- Subtle scroll hint -->
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>scroll</span>
+    <!-- ══ SLIDE 2 — HIROSHIMA ══════════════════════════════════ -->
+    <div class="slide" data-index="1">
+      <!-- ✏️ SLIDE 2 IMAGE -->
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1600&q=85');"></div>
+      <div class="slide-overlay-r"></div>
+      <div class="slide-overlay-b"></div>
+      <div class="slide-content">
+        <p class="slide-eyebrow">Chugoku Region &bull; Japan</p><!-- ✏️ SLIDE 2 EYEBROW -->
+        <h1 class="slide-title">Hiroshima</h1><!-- ✏️ SLIDE 2 TITLE -->
+        <p class="slide-desc"><!-- ✏️ SLIDE 2 DESCRIPTION -->
+          A city reborn from history, Hiroshima stands as a powerful symbol
+          of peace and resilience — where memory and renewal coexist in
+          profound harmony.
+        </p>
+      </div>
     </div>
+
+    <!-- ══ SLIDE 3 — BODH GAYA ══════════════════════════════════ -->
+    <div class="slide" data-index="2">
+      <!-- ✏️ SLIDE 3 IMAGE — your local file -->
+      <div class="slide-bg" style="background-image: url('bodh gaya 2.jpeg');"></div>
+      <div class="slide-overlay-r"></div>
+      <div class="slide-overlay-b"></div>
+      <div class="slide-content">
+        <p class="slide-eyebrow">Bihar &bull; India</p><!-- ✏️ SLIDE 3 EYEBROW -->
+        <h1 class="slide-title">Bodh Gaya</h1><!-- ✏️ SLIDE 3 TITLE -->
+        <p class="slide-desc"><!-- ✏️ SLIDE 3 DESCRIPTION -->
+          The place where Gautama Buddha attained enlightenment beneath
+          the sacred Bodhi Tree — one of the most spiritually significant
+          sites in the world, drawing pilgrims from every corner of the globe.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — RAJGIR ═════════════════════════════════════ -->
+    <div class="slide" data-index="3">
+      <!-- ✏️ SLIDE 4 IMAGE — your local file -->
+      <div class="slide-bg" style="background-image: url('Rajgir.jpeg');"></div>
+      <div class="slide-overlay-r"></div>
+      <div class="slide-overlay-b"></div>
+      <div class="slide-content">
+        <p class="slide-eyebrow">Bihar &bull; India</p><!-- ✏️ SLIDE 4 EYEBROW -->
+        <h1 class="slide-title">Rajgir</h1><!-- ✏️ SLIDE 4 TITLE -->
+        <p class="slide-desc"><!-- ✏️ SLIDE 4 DESCRIPTION -->
+          Nestled among five ancient hills, Rajgir was the first capital of
+          the Magadha kingdom and a favoured retreat of the Buddha himself —
+          hot springs, hilltop shrines, and centuries of living history.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — NALANDA ════════════════════════════════════ -->
+    <div class="slide" data-index="4">
+      <!-- ✏️ SLIDE 5 IMAGE — replace with your local Nalanda photo -->
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1609766857119-3e8c18a45d96?w=1600&q=85');"></div>
+      <div class="slide-overlay-r"></div>
+      <div class="slide-overlay-b"></div>
+      <div class="slide-content">
+        <p class="slide-eyebrow">Bihar &bull; India</p><!-- ✏️ SLIDE 5 EYEBROW -->
+        <h1 class="slide-title">Nalanda</h1><!-- ✏️ SLIDE 5 TITLE -->
+        <p class="slide-desc"><!-- ✏️ SLIDE 5 DESCRIPTION -->
+          Once the greatest centre of learning in the ancient world, the
+          ruins of Nalanda University still hum with the memory of thousands
+          of scholars — a UNESCO World Heritage Site.
+        </p>
+      </div>
+    </div>
+
+    <!-- Prev / Next arrows -->
+    <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide">&#8592;</button>
+    <button class="slide-arrow next" id="slideNext" aria-label="Next slide">&#8594;</button>
+
+    <!-- Navigation dots — add one <button> per slide -->
+    <div class="slide-dots" role="tablist" aria-label="Slide navigation">
+      <button class="slide-dot active" data-dot="0" aria-label="Slide 1"></button>
+      <button class="slide-dot"        data-dot="1" aria-label="Slide 2"></button>
+      <button class="slide-dot"        data-dot="2" aria-label="Slide 3"></button>
+      <button class="slide-dot"        data-dot="3" aria-label="Slide 4"></button>
+      <button class="slide-dot"        data-dot="4" aria-label="Slide 5"></button>
+    </div>
+
   </section>
 
 
@@ -1048,8 +1128,7 @@ serene views that attract pilgrims and travelers from across the globe.
 
     <div class="section-header">
       <div>
-        <p class="section-label">Our Destinations</p>
-        <h2 class="section-title">Discover <em>Bihar</em></h2>
+        <h2 class="section-title">Experience <em>Bihar</em></h2>
       </div>
     </div>
 
@@ -1463,6 +1542,59 @@ serene views that attract pilgrims and travelers from across the globe.
       document.querySelector('.navbar').style.boxShadow =
         window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
     });
+
+    /* ── HERO SLIDESHOW ─────────────────────────────────────────
+       ✏️ TOTAL_SLIDES   → raise by 1 each time you add a slide
+       ✏️ SLIDE_INTERVAL → ms between auto-advances (5000 = 5 sec)
+    ─────────────────────────────────────────────────────────── */
+    const TOTAL_SLIDES   = 5;
+    const SLIDE_INTERVAL = 5000;
+
+    let current   = 0;
+    let autoTimer = null;
+
+    const slides  = document.querySelectorAll('.slide');
+    const dots    = document.querySelectorAll('.slide-dot');
+    const prevBtn = document.getElementById('slidePrev');
+    const nextBtn = document.getElementById('slideNext');
+
+    function goTo(n) {
+      if (n < 0)             n = TOTAL_SLIDES - 1;
+      if (n >= TOTAL_SLIDES) n = 0;
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = n;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() { stopAuto(); autoTimer = setInterval(next, SLIDE_INTERVAL); }
+    function stopAuto()  { if (autoTimer) clearInterval(autoTimer); }
+
+    nextBtn.addEventListener('click', () => { next(); startAuto(); });
+    prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); startAuto(); }));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { next(); startAuto(); }
+      if (e.key === 'ArrowLeft')  { prev(); startAuto(); }
+    });
+
+    const heroEl = document.getElementById('hero');
+    heroEl.addEventListener('mouseenter', stopAuto);
+    heroEl.addEventListener('mouseleave', startAuto);
+
+    let tx = 0;
+    heroEl.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+    heroEl.addEventListener('touchend',   e => {
+      const d = e.changedTouches[0].screenX - tx;
+      if (Math.abs(d) > 50) { d < 0 ? next() : prev(); startAuto(); }
+    }, { passive: true });
+
+    startAuto();
   </script>
 </body>
 </html>
