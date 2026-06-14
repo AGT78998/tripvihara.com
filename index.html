@@ -173,9 +173,7 @@
     .slide {
       position: absolute;
       inset: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      pointer-events: none;
+      opacity:1;
     }
     .slide.active {
       opacity: 1;
@@ -871,44 +869,16 @@
                              add a dot, set TOTAL_SLIDES+1 in JS
        ✏️ Change timing    → SLIDE_INTERVAL in the <script> block
        ============================================= -->
-  <section class="hero" id="hero" role="banner" aria-label="Destination slideshow">
+  <section class="hero" id="hero" role="banner" aria-label="Hero Banner">
 
     <!-- ══ SLIDE 1 — KYOTO ══════════════════════════════════════ -->
-    <div class="slide active" data-index="0">
-      <!-- ✏️ SLIDE 1 IMAGE -->
-      <div class="slide-bg" style="background-image: url('WhatsApp Image 2026-05-18 at 4.49.46 PM.jpeg');"></div>
-      <div class="slide-overlay-r"></div>
-      <div class="slide-overlay-b"></div>
-      <div class="slide-content">
-        <!-- ✏️ SLIDE 1 EYEBROW -->
-        <h1 class="slide-title">Pawapuri</h1><!-- ✏️ SLIDE 1 TITLE -->
-        <p class="slide-desc"><!-- ✏️ SLIDE 1 DESCRIPTION -->
-          A famous Jain pilgrimage site in Bihar, known as the place where Lord Mahavira attained nirvana.
-It is famous for the beautiful Jal Mandir, a marble temple situated in the middle of a lotus pond.
-Pawapuri attracts thousands of pilgrims and tourists every year because of its spiritual and historical importance.
-        </p>
-      </div>
-    </div>
+    
 
     <!-- ══ SLIDE 2 — HIROSHIMA ══════════════════════════════════ -->
-    <div class="slide" data-index="1">
-      <!-- ✏️ SLIDE 2 IMAGE -->
-      <div class="slide-bg" style="background-image: url('WhatsApp Image 2026-05-18 at 4.49.15 PM.jpeg');"></div>
-      <div class="slide-overlay-r"></div>
-      <div class="slide-overlay-b"></div>
-      <div class="slide-content">
-        <!-- ✏️ SLIDE 2 EYEBROW -->
-        <h1 class="slide-title">Rajgir</h1><!-- ✏️ SLIDE 2 TITLE -->
-        <p class="slide-desc"><!-- ✏️ SLIDE 2 DESCRIPTION -->
-          A historic city in Bihar known for its religious and cultural importance.
-It was the ancient capital of the Magadha kingdom and is associated with both Buddhism and Jainism.
-Rajgir is famous for attractions like the Vishwa Shanti Stupa, hot springs, and beautiful hills surrounding the city.
-        </p>
-      </div>
-    </div>
+
 
     <!-- ══ SLIDE 3 — BODH GAYA ══════════════════════════════════ -->
-    <div class="slide" data-index="2">
+    <div class="slide active">
       <!-- ✏️ SLIDE 3 IMAGE — your local file -->
       <div class="slide-bg" style="background-image: url('fotor_2026-05-19_21-56-38.jpeg');"></div>
       <div class="slide-overlay-r"></div>
@@ -928,33 +898,12 @@ Rajgir is famous for attractions like the Vishwa Shanti Stupa, hot springs, and 
     
 
     <!-- ══ SLIDE 5 — NALANDA ════════════════════════════════════ -->
-    <div class="slide" data-index="3">
-      <!-- ✏️ SLIDE 5 IMAGE — replace with your local Nalanda photo -->
-      <div class="slide-bg" style="background-image: url('nalanda.jpg');"></div>
-      <div class="slide-overlay-r"></div>
-      <div class="slide-overlay-b"></div>
-      <div class="slide-content">
-        <!-- ✏️ SLIDE 5 EYEBROW -->
-        <h1 class="slide-title">Nalanda</h1><!-- ✏️ SLIDE 5 TITLE -->
-        <p class="slide-desc"><!-- ✏️ SLIDE 5 DESCRIPTION -->
-          Nalanda is famous for the ancient Nalanda University, one of the world’s oldest centers of learning.
-It was a major Buddhist educational center that attracted students from many countries.
-Today, the ruins of Nalanda are an important historical and tourist attraction in India.
-        </p>
-      </div>
-    </div>
+    
 
     <!-- Prev / Next arrows -->
-    <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide">&#8592;</button>
-    <button class="slide-arrow next" id="slideNext" aria-label="Next slide">&#8594;</button>
 
     <!-- Navigation dots — add one <button> per slide -->
-    <div class="slide-dots" role="tablist" aria-label="Slide navigation">
-      <button class="slide-dot active" data-dot="0" aria-label="Slide 0"></button>
-      <button class="slide-dot"        data-dot="1" aria-label="Slide 1"></button>
-      <button class="slide-dot"        data-dot="2" aria-label="Slide 2"></button>
-      <button class="slide-dot"        data-dot="4" aria-label="Slide 3"></button>
-    </div>
+
 
   </section>
 
@@ -1264,54 +1213,7 @@ Today, the ruins of Nalanda are an important historical and tourist attraction i
        ✏️ TOTAL_SLIDES   → raise by 1 each time you add a slide
        ✏️ SLIDE_INTERVAL → ms between auto-advances (5000 = 5 sec)
     ─────────────────────────────────────────────────────────── */
-    const TOTAL_SLIDES   = 4;
-    const SLIDE_INTERVAL = 5000;
-
-    let current   = 0;
-    let autoTimer = null;
-
-    const slides  = document.querySelectorAll('.slide');
-    const dots    = document.querySelectorAll('.slide-dot');
-    const prevBtn = document.getElementById('slidePrev');
-    const nextBtn = document.getElementById('slideNext');
-
-    function goTo(n) {
-      if (n < 0)             n = TOTAL_SLIDES - 1;
-      if (n >= TOTAL_SLIDES) n = 0;
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = n;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    function startAuto() { stopAuto(); autoTimer = setInterval(next, SLIDE_INTERVAL); }
-    function stopAuto()  { if (autoTimer) clearInterval(autoTimer); }
-
-    nextBtn.addEventListener('click', () => { next(); startAuto(); });
-    prevBtn.addEventListener('click', () => { prev(); startAuto(); });
-    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); startAuto(); }));
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') { next(); startAuto(); }
-      if (e.key === 'ArrowLeft')  { prev(); startAuto(); }
-    });
-
-    const heroEl = document.getElementById('hero');
-    heroEl.addEventListener('mouseenter', stopAuto);
-    heroEl.addEventListener('mouseleave', startAuto);
-
-    let tx = 0;
-    heroEl.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-    heroEl.addEventListener('touchend',   e => {
-      const d = e.changedTouches[0].screenX - tx;
-      if (Math.abs(d) > 50) { d < 0 ? next() : prev(); startAuto(); }
-    }, { passive: true });
-
-    startAuto();
+    
   </script>
 </body>
 </html>
