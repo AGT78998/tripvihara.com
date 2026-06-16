@@ -444,21 +444,45 @@
             }
 
             .hero-quote {
-                max-width: 320px;
-                margin-bottom: 40px;
-                transform: translateY(-100px);
+                position: relative;
+                max-width: 280px;
+                margin-bottom: 15px;
+                transform: translateY(-60px);
+            }
+
+            .quote-top {
+                margin-top: 0;
+                margin-bottom: 8px;
+                gap: 10px;
             }
 
             .quote-mark {
-                font-size: 4rem;
+                font-size: 2.8rem;
+                line-height: 1;
             }
 
             .quote-line {
-                width: 120px;
+                width: 90px;
+            }
+
+            .quote-side-line {
+                left: 8px;
+                top: 58px;
+                height: 110px;
+            }
+
+            .quote-text {
+                font-size: 1.6rem !important;
+                line-height: 1.05 !important;
+                margin-left: 22px;
+                top: -10px;
             }
 
             .quote-bottom-line {
-                width: 60px;
+                width: 50px;
+                margin-top: 12px;
+                margin-left: 0;
+                top: 0;
             }
         }
 
@@ -850,39 +874,21 @@
                 text-align: center;
             }
 
-            .hero-quote {
-                max-width: 280px;
-                margin-bottom: 25px;
-            }
-
-            .quote-mark {
-                font-size: 2.8rem;
-            }
-
-            .quote-line {
-                width: 90px;
-            }
-
-            .quote-text {
-                font-size: 1.8rem !important;
-                line-height: 1 !important;
-            }
-
-
-            .quote-bottom-line {
-                width: 50px;
-                margin-top: 20px;
-            }
-
             /* BODH GAYA TITLE */
             .slide-title {
                 font-size: 3rem !important;
+                margin-top: 80px;
+            }
+
+            .slide-desc {
+                margin-top: 12px;
             }
 
             /* MOVE CONTENT SLIGHTLY UP */
-            .hero-content {
+            .slide-content {
                 padding-top: 20px;
             }
+        }
     </style>
 
     <!-- ============================================================
@@ -1147,9 +1153,8 @@
                     <div class="quote-side-line"></div>
 
                     <h2 class="quote-text">
-                        What Rome was<br>
-                        to Europe,<br>
-                        <span class="quote-highlight">Bihar</span> was to Asia.
+                        Rome shaped Europe,<br>
+                        <span class="quote-highlight">Bihar</span> shaped Asia.
                     </h2>
 
                     <div class="quote-bottom-line"></div>
