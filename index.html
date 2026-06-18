@@ -440,7 +440,11 @@
         /* Mobile adjustments */
         @media (max-width: 768px) {
 
-
+            /* Reposition the hero background image ONLY on mobile */
+            .slide-bg {
+            background-position: center bottom; /* Shifting focus to the lower part of the photo */
+            background-size: cover;
+            }
             .slide-title {
                 font-size: clamp(2.8rem, 12vw, 4rem);
             }
