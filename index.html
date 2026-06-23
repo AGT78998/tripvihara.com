@@ -18,8 +18,8 @@
        CSS CUSTOM PROPERTIES (edit brand colors here)
        ============================================= */
         :root {
-            --black: #2C2218;
-            --dark: #3A2D21;
+            --black: #F4EBDD;
+            --dark: #F4EBDD;
             --mid-dark: #1e1e1e;
             --warm-white: #f5f0ea;
             --cream: #ede8df;
@@ -78,7 +78,7 @@
             right: 0;
             z-index: 100;
             height: var(--nav-height);
-            background: #2C2218;
+            background: #F4EBDD;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(201, 168, 76, 0.15);
@@ -579,20 +579,25 @@
             font-size: 1.25rem;
             line-height: 2;
             font-style: italic;
-            color: rgba(245, 240, 234, 0.82);
+            color: #2B1D0E;
             margin-bottom: 24px;
         }
-         .essay-image {
-            display: block;
-            max-width: 65%;
-            /* Prevents the image from overflowing the text width */
-            height: auto;
-            /* Keeps the aspect ratio perfect */
-            margin: 30px auto;
-            /* Centers the image and adds space above and below it */
-            border-radius: 4px;
-            /* Optional: gives it slightly soft corners */
-        }
+         .image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;            /* Adjusts the spacing between the two images */
+    margin: 35px auto;    /* Spacing above and below the image block */
+    width: 100%;
+    max-width: 900px;     /* Matches your content's maximum reading width */
+}
+
+.image-row img {
+    flex: 1;              /* Forces both images to take up equal width */
+    width: 50%;           
+    max-height: 400px;         /* Maintains the original aspect ratio */
+    object-fit: cover;    /* Crops neatly if the two images have different heights */
+    border-radius: 4px;   /* Optional: soft rounded corners */
+}
 
         .heritage-essay blockquote {
             margin-top: 40px;
@@ -772,7 +777,7 @@
    ============================================= */
 
         .premium-footer {
-            background: #2C2218;
+            background: #F4EBDD;
             padding: 50px 8vw;
             display: flex;
             justify-content: space-between;
@@ -817,7 +822,7 @@
 
         .footer-text {
             max-width: 550px;
-            color: rgba(255, 255, 255, 0.7);
+            color: #2B1D0E;
             line-height: 1.9;
             font-size: 1rem;
         }
@@ -958,6 +963,15 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            @media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Stacks the images vertically on smaller screens */
+        gap: 15px;
+    }
+    .image-row img {
+        width: 100%;        /* Allows images to take full width on mobile */
+    }
+}
 
             footer {
                 flex-direction: column;
@@ -1013,7 +1027,7 @@
             font-family: var(--font-display);
             font-size: clamp(1.9rem, 3.5vw, 2.8rem);
             font-weight: 300;
-            color: var(--warm-white);
+            color: #2B1D0E;
             text-align: center;
             margin-bottom: 56px;
             line-height: 1.2;
@@ -1287,7 +1301,10 @@
                     <p>
                         As old as the Great Wall of China, the Cyclopean Walls of Bihar once stood guard over one of the ancient world's most powerful cities—Rajgir. Long before Machiavelli wrote The Prince, Bihar had given the world the Arthashastra, a foundational text on governance and politics.
                     </p>
-                    <img src="ashokan.jpeg" alt="Heritage of Bihar" class="essay-image">
+                    <div class="image-row">
+                    <img src="ashokan.jpeg" alt="Vaishali Ashoka Pillar">
+                    <img src="imgfile.jpeg" alt="Second Heritage Image">
+                    </div>
                     <p>
                         This is where Aryabhata laid the mathematical groundwork that would shape centuries of scientific thought, where Mahavira was born and later attained Nirvana, and where Nalanda once stood as the world's first residential university, centuries before Oxford or Bologna existed.
                     </p>
