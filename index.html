@@ -230,11 +230,18 @@
 
         /* Same two overlays as original .hero::before / .hero::after */
         .slide-overlay-r {
-            display: none;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(13, 13, 13, 0.82) 0%,
+                    rgba(13, 13, 13, 0.45) 55%,
+                    rgba(13, 13, 13, 0.1) 100%);
         }
 
         .slide-overlay-b {
-            display: none;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 13, 13, 0.5) 0%, transparent 50%);
         }
 
         /* Content block — same position & size as original .hero-content */
@@ -433,7 +440,7 @@
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .hero {
-            height: 65vh; /* Changes it from 100% height to 65% height */
+            height: 85vh; /* Changes it from 100% height to 65% height */
             min-height: 480px; 
             }
 
