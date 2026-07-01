@@ -72,103 +72,79 @@
        ============================================= */
         /* To change the brand name → edit the <span class="brand-name"> in HTML below */
         .navbar {
-            position: relative;
+            position: sticky;
             top: 0;
-            left: 50%;
+            
             right: 0;
-            z-index: 100;
-            height: var(--nav-height);
+            z-index: 1000;
+            height: 76px;
             background: #2B1D0E;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            
+            
+            
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 5vw;
-            transform: translateX(-50%);
+            padding: 0 48px;
+            
         }
 
         /* ── Logo / Brand ─────────────────────────── */
         .brand {
-            display: flex;
+            
             align-items: center;
             gap: 12px;
-            position: absolute;
+            
             left: 50%;
-            transform: translateX(-50%);
+            
+             position: static;
+    transform: none;
+
+    display: flex;
+    align-items: center;
         }
 
-        .brand-mark {
-            width: 50px;
-            height: 50px;
-            flex-shrink: 0;
-        }
-
-        .brand-mark img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .brand-mark svg {
-            width: 18px;
-            height: 18px;
-        }
-
+        
         /* ✏️  CHANGE WEBSITE NAME — edit text inside <span class="brand-name"> */
         .brand-name {
-            font-family: var(--font-display);
-            font-size: 1.7rem;
-            font-weight: 400;
-            letter-spacing: 0.04em;
-            color: var(--warm-white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: #C8922A;
         }
 
-        .brand-name span {
-            color: var(--gold);
-        }
+        
 
         /* ── Nav Links ────────────────────────────── */
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 40px;
+            gap: 36px;
             position: absolute;
             right: 5vw;
         }
 
         .nav-links a {
-            font-family: var(--font-body);
+            font-family: Inter, sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            color: #F4EFE5;
+            color: #F5F0E6;
             position: relative;
             padding-bottom: 4px;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.35s ease;
-        }
 
-        .nav-links a:hover {
-            color: var(--gold);
-        }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover,
+        .nav-links a.active {
+    color: #C8922A;
+}
+
+        
 
         /* ── Mobile hamburger ─────────────────────── */
         .hamburger {
@@ -183,7 +159,7 @@
             display: block;
             width: 24px;
             height: 1.5px;
-            background: var(--warm-white);
+            background: #F5F0E6;
             transition: all 0.3s;
         }
 
@@ -455,7 +431,8 @@
 
             
                 .navbar {
-        justify-content: center;
+        height:64px;
+    padding:0 24px;
     }
 
     .brand {
@@ -870,13 +847,18 @@
                 top: var(--nav-height);
                 left: 0;
                 right: 0;
-                background: var(--black);
-                padding: 32px 5vw 40px;
-                gap: 28px;
+                background: #2B1D0E;
+                padding: 24px;
+                gap: 24px;
                 border-top: 1px solid rgba(201, 168, 76, 0.15);
             }
 
             .nav-links.open a {
+                min-height:48px;
+
+    display:flex;
+
+    align-items:center;
                 font-size: 1rem;
                 letter-spacing: 0.12em;
             }
@@ -1140,9 +1122,7 @@
 
         <!-- ✏️ CHANGE WEBSITE NAME: Edit text below between <span> tags -->
         <a href="/" class="brand" aria-label="Home">
-            <div class="brand-mark">
-                <img src="WhatsApp Image 2026-05-26 at 6.10.48 (1).jpeg" alt="TripVihara Logo">
-            </div>
+
             <span class="brand-name">
                 Trip<span>Vihara</span>
             </span>
@@ -1150,7 +1130,9 @@
 
         <!-- ✏️ CHANGE NAV LINKS: Edit href values to point to your pages -->
         <ul class="nav-links" id="navLinks">
-            <li><a href="#destinations">Tours</a></li>
+            <li class="has-dropdown">
+                <a href="#">Explore</a>
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
