@@ -404,7 +404,7 @@
             .hero-heading {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: clamp(4.5rem, 9vw, 8rem);
 
     line-height: 0.95;
 
@@ -1392,10 +1392,7 @@
         });
 
         // Subtle navbar shadow on scroll
-        window.addEventListener('scroll', () => {
-            document.querySelector('.navbar').style.boxShadow =
-                window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
-        });
+       
 
         /* ── HERO SLIDESHOW ─────────────────────────────────────────
            ✏️ TOTAL_SLIDES   → raise by 1 each time you add a slide
