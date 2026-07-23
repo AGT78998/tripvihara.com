@@ -101,14 +101,14 @@
     transform: none;
 
     display: flex;
-    align-items: center;
+    margin-left: 24px;
         }
 
         
         /* ✏️  CHANGE WEBSITE NAME — edit text inside <span class="brand-name"> */
         .brand-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 26px;
             font-weight: 600;
             letter-spacing: 0.03em;
             color: #C8922A;
@@ -130,7 +130,7 @@
             font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: 0.04em;
-            text-transform: uppercase;
+            
             color: #F5F0E6;
             position: relative;
             padding-bottom: 4px;
@@ -296,7 +296,9 @@
         }
 
         
-
+        .dropdown {
+            display: none;
+        }
         
 
         /* Prev / Next arrows */
@@ -1114,6 +1116,13 @@
 </head>
 
 <body>
+    <li class="has-dropdown">
+    <a href="#">Explore</a>
+
+    <ul class="dropdown">
+        <!-- future items -->
+    </ul>
+</li>
 
     <!-- =============================================
        NAVBAR
