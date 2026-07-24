@@ -385,8 +385,8 @@
 
             /* Reposition the hero background image ONLY on mobile */
             .slide-bg {
-            background-size: cover !important; 
-            background-position: center 10% !important;
+            background-size: cover ; 
+            background-position: center 38%;
             }
             .slide-title {
                 font-size: clamp(2.8rem, 12vw, 4rem);
@@ -414,18 +414,20 @@
                 position: relative;
                 max-width: 340px;
                 margin-bottom: 15px;
-                transform: translateY(-60px);
+                
             }
             .hero-heading {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(4.5rem, 9vw, 8rem);
+    font-size: 38px;
 
-    line-height: 0.95;
+    line-height: 1.12;
+    letter-spacing: 0.03em;
 
-    color: #F4EFE5;
+    color: #F5F0E6;
 
     text-align: left;
+    max-width: 85%;
 }
 
 .hero-heading span {
@@ -455,7 +457,7 @@
     .hamburger {
         display: flex;
         position: absolute;
-        right: 20px;
+        right: 24px;
         width:48px;
     height:48px;
 
@@ -931,7 +933,10 @@
 
             /* MOVE CONTENT SLIGHTLY UP */
             .slide-content {
-                padding-top: 20px;
+                left: 24px;
+    right: 24px;
+    max-width: 85%;
+    padding: 0;
             }
         }
     </style>
