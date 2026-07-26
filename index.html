@@ -19,200 +19,13 @@
         closing </style> tag (right after your existing mobile
         @media block ends).
     ============================================================ -->
-    <style>
-        /* ============================================================
-       SECTION 1 — TRAVEL OPTIONS
-       Two large clickable cards side by side
-       ============================================================ */
 
-        .travel-options-section {
-            background: var(--dark);
-            padding: 10px 5vw 100px;
-        }
+   
 
-        /* ── Section heading area ── */
-        .travel-options-section .to-label {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .travel-options-section .to-heading {
-            font-family: var(--font-display);
-            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-            font-weight: 300;
-            color: #2B1D0E;
-            text-align: center;
-            margin-bottom: 56px;
-            line-height: 1.2;
-        }
-
-        .travel-options-section .to-heading em {
-            font-style: italic;
-            color: var(--gold);
-        }
-
-        /* ── Two-card row ── */
-        .to-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            /* razor-thin gap gives a "split panel" feel */
-            max-width: 1080px;
-            margin: 0 auto;
-        }
-
-        /* ── Individual option card ──
-       ✏️ CHANGE CARD LINK   → href on <a class="to-card">
-       ✏️ CHANGE CARD NUMBER → <span class="to-card-num">
-       ✏️ CHANGE CARD TITLE  → <h3 class="to-card-title">
-       ✏️ CHANGE CARD DESC   → <p class="to-card-desc">
-       ✏️ CHANGE CTA TEXT    → <span class="to-cta">
-    */
-        .to-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 72px 48px 64px;
-            background: var(--mid-dark);
-            border: 1px solid rgba(201, 168, 76, 0.10);
-            overflow: hidden;
-            transition: background 0.45s, border-color 0.45s,
-                transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* Soft gold glow fill on hover */
-        .to-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center,
-                    rgba(200, 137, 58, 0.09) 0.12%,
-                    transparent 72%);
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        /* Top gold rule that slides in */
-        .to-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #c8893a, transparent);
-            transform: scaleX(0);
-            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        .to-card:hover {
-            background: #FFFCF7;
-            border-color: rgba(201, 168, 76, 0.30);
-            transform: translateY(-4px);
-        }
-
-        .to-card:hover::before {
-            opacity: 1;
-        }
-
-        .to-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .to-card-num {
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            font-weight: 300;
-            letter-spacing: 0.35em;
-            color: var(--gold);
-            opacity: 0.6;
-            margin-bottom: 24px;
-        }
-
-        .to-card-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.4rem, 4vw, 3.4rem);
-            font-weight: 300;
-            color: var(--warm-white);
-            line-height: 1.1;
-            margin-bottom: 20px;
-            transition: color 0.35s;
-        }
-
-        .to-card:hover .to-card-title {
-            color: var(--gold-light);
-        }
-
-        .to-card-desc {
-            font-family: var(--font-body);
-            font-size: 0.88rem;
-            font-weight: 300;
-            color: var(--text-muted);
-            line-height: 1.75;
-            max-width: 300px;
-            margin-bottom: 36px;
-        }
-
-        .to-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold);
-            border-bottom: 1px solid rgba(201, 168, 76, 0.3);
-            padding-bottom: 4px;
-            transition: gap 0.3s, color 0.3s, border-color 0.3s;
-        }
-
-        .to-card:hover .to-cta {
-            gap: 14px;
-            color: var(--gold-light);
-            border-color: var(--gold-light);
-        }
-
-        /* Mobile: stack vertically */
-        @media (max-width: 700px) {
-            .to-cards {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .to-card {
-                padding: 52px 28px;
-            }
-
-            .to-card-title {
-                font-size: 2.4rem;
-            }
-        }
-
-
-        /* ============================================================
-       SECTION 2 — INTRODUCTION / DESCRIPTION
-       Matches the reference: light cream background, dark text,
-       centered layout, large bold heading + subheading + 2 paras
-       ============================================================ */
-        /* ============================================================
-       END OF NEW CSS
-       ============================================================ */
-    </style>
 </head>
 
 <body>
-    
+
 
     <!-- =============================================
        NAVBAR
@@ -232,8 +45,8 @@
             <li class="has-dropdown">
                 <a href="#">Explore</a>
                 <ul class="dropdown">
-            <!-- Future destinations go here --> 
-            <!-- Example:
+                    <!-- Future destinations go here -->
+                    <!-- Example:
             <li><a href="/nalanda">Nalanda</a></li>
             <li><a href="/bodh-gaya">Bodh Gaya</a></li>
             -->
@@ -278,11 +91,11 @@
             <div class="slide-content">
                 <div class="hero-quote">
                     <h1 class="hero-heading">
-    Rome shaped Europe,<br>
-    <span>Bihar</span> shaped Asia.
-</h1>
+                        Rome shaped Europe,<br>
+                        <span>Bihar</span> shaped Asia.
+                    </h1>
 
-                    
+
                 </div>
                 <!-- ✏️ SLIDE 3 EYEBROW -->
 
@@ -303,252 +116,255 @@
     </section>
     <section class="claim-section">
 
-    <div class="claim-container">
+        <div class="claim-container">
 
-        <h2 class="claim-text">
-            Every November, millions gather along Bihar's rivers to celebrate Chhath, one of world's oldest living traditions of sun worship. Yet this living tradition is only one chapter in a much longer story.
-            <br><br>
+            <h2 class="claim-text">
+                Every November, millions gather along Bihar's rivers to celebrate Chhath, one of world's oldest living
+                traditions of sun worship. Yet this living tradition is only one chapter in a much longer story.
+                <br><br>
 
-            From the ideas of governance found in Chanakya's Arthashastra to the Jataka tales, one of world's oldest collections of animal fables, sharing striking parallels with Aesop's Fables, half a world away—
-            <br><br>
+                From the ideas of governance found in Chanakya's Arthashastra to the Jataka tales, one of world's oldest
+                collections of animal fables, sharing striking parallels with Aesop's Fables, half a world away—
+                <br><br>
 
-            Bihar was not on the margins of ancient history—it was one of its greatest centers of thought, learning, and governance.
-            <br><br>
+                Bihar was not on the margins of ancient history—it was one of its greatest centers of thought, learning,
+                and governance.
+                <br><br>
 
-            This is not myth or memory.
-            It is history that you can walk through today.
-        </h2>
+                This is not myth or memory.
+                It is history that you can walk through today.
+            </h2>
 
-    </div>
+        </div>
 
-</section>
+    </section>
     <section class="story-section">
 
-    <div class="story-heading">
-        <span>Chapter I</span>
-    </div>
-
-    <!-- Story 1 -->
-
-    <div class="story-row story-left">
-
-        <div class="story-image">
-            <img src="nalanda2.jpeg" alt="Nalanda Ruins">
+        <div class="story-heading">
+            <span>Chapter I</span>
         </div>
 
-        <div class="story-content">
+        <!-- Story 1 -->
 
-            <h2>The Greatest Classroom of the Ancient World</h2>
+        <div class="story-row story-left">
 
-            <p>
-                Imagine a university where monks debated philosophy,
-                astronomers studied the stars, physicians learned medicine,
-                and travelers crossed mountains simply to study.
+            <div class="story-image">
+                <img src="nalanda2.jpeg" alt="Nalanda Ruins">
+            </div>
 
-                For centuries, Nalanda was one of the world's greatest
-                centres of learning.
+            <div class="story-content">
 
-                Today, its quiet ruins still carry the echoes of those
-                conversations.
-            </p>
+                <h2>The Greatest Classroom of the Ancient World</h2>
 
-        </div>
+                <p>
+                    Imagine a university where monks debated philosophy,
+                    astronomers studied the stars, physicians learned medicine,
+                    and travelers crossed mountains simply to study.
 
-    </div>
+                    For centuries, Nalanda was one of the world's greatest
+                    centres of learning.
 
+                    Today, its quiet ruins still carry the echoes of those
+                    conversations.
+                </p>
 
-    <!-- Story 2 -->
-
-    <div class="story-row story-right">
-
-        <div class="story-content">
-
-            <h2>History Never Really Left</h2>
-
-            <p>
-                Empires rose. Great universities flourished.
-                Ideas changed the world.
-
-                Through every chapter of Bihar's story,
-                the Ganga kept flowing—connecting people,
-                cultures and generations.
-
-                Even today, its banks remain part of everyday life,
-                reminding visitors that history here isn't locked
-                behind museum glass.
-
-                It continues to breathe.
-            </p>
+            </div>
 
         </div>
 
-        <div class="story-image">
-            <img src="ganges2.jpeg" alt="River Ganga">
+
+        <!-- Story 2 -->
+
+        <div class="story-row story-right">
+
+            <div class="story-content">
+
+                <h2>History Never Really Left</h2>
+
+                <p>
+                    Empires rose. Great universities flourished.
+                    Ideas changed the world.
+
+                    Through every chapter of Bihar's story,
+                    the Ganga kept flowing—connecting people,
+                    cultures and generations.
+
+                    Even today, its banks remain part of everyday life,
+                    reminding visitors that history here isn't locked
+                    behind museum glass.
+
+                    It continues to breathe.
+                </p>
+
+            </div>
+
+            <div class="story-image">
+                <img src="ganges2.jpeg" alt="River Ganga">
+            </div>
+
         </div>
 
-    </div>
 
+        <!-- Story 3 -->
 
-    <!-- Story 3 -->
+        <div class="story-row story-right-large">
 
-    <div class="story-row story-right-large">
+            <div class="story-content">
 
-        <div class="story-content">
+                <h2>Cut From Rock, Polished to a Mirror</h2>
 
-            <h2>Cut From Rock, Polished to a Mirror</h2>
+                <p>
+                    More than 2,200 years ago,
+                    these granite chambers were carved into solid rock
+                    and polished to a mirror-like finish that still
+                    astonishes visitors today.
 
-            <p>
-                More than 2,200 years ago,
-                these granite chambers were carved into solid rock
-                and polished to a mirror-like finish that still
-                astonishes visitors today.
+                    And that's not even its most interesting feature.
 
-                And that's not even its most interesting feature.
+                    Built during the Mauryan Empire,
+                    the Barabar Caves are one of world's oldest
+                    surviving rock-cut caves.
+                </p>
 
-                Built during the Mauryan Empire,
-                the Barabar Caves are one of world's oldest
-                surviving rock-cut caves.
-            </p>
+            </div>
+
+            <div class="story-image">
+                <img src="barabar.jpeg" alt="Barabar Caves">
+            </div>
 
         </div>
 
-        <div class="story-image">
-            <img src="barabar.jpeg" alt="Barabar Caves">
+
+        <div class="story-ending">
+
+            <h2>
+                Some places preserve history.
+                Bihar still lives it.
+            </h2>
+
         </div>
 
-    </div>
-
-
-    <div class="story-ending">
-
-        <h2>
-            Some places preserve history.
-            Bihar still lives it.
-        </h2>
-
-    </div>
-
-</section>
+    </section>
 
     <section class="guardian-section">
 
-    <div class="guardian-container">
+        <div class="guardian-container">
 
-        <p class="guardian-label">
-            GUARDIAN SUPPORT
-        </p>
+            <p class="guardian-label">
+                GUARDIAN SUPPORT
+            </p>
 
-        <p class="guardian-text">
-            Every TripVihara experience includes Guardian Support — local,
-            practical assistance with connectivity, medical emergencies,
-            payments, food and water, transport, and more throughout your
-            journey.
-        </p>
+            <p class="guardian-text">
+                Every TripVihara experience includes Guardian Support — local,
+                practical assistance with connectivity, medical emergencies,
+                payments, food and water, transport, and more throughout your
+                journey.
+            </p>
 
-        <a href="about.html" class="guardian-link">
-            Learn more about Guardian Support →
-        </a>
+            <a href="about.html" class="guardian-link">
+                Learn more about Guardian Support →
+            </a>
 
-    </div>
+        </div>
 
-</section>
+    </section>
     <section class="heritage-section">
 
-    <div class="heritage-header">
+        <div class="heritage-header">
 
-        <span class="heritage-chapter">Chapter III</span>
+            <span class="heritage-chapter">Chapter III</span>
 
-        <h2 class="heritage-intro">
-            Every journey through Bihar offers something different — a sacred path,
-            an ancient civilization, an extraordinary human story,
-            or an untamed wilderness.
-        </h2>
+            <h2 class="heritage-intro">
+                Every journey through Bihar offers something different — a sacred path,
+                an ancient civilization, an extraordinary human story,
+                or an untamed wilderness.
+            </h2>
 
-    </div>
+        </div>
 
-    <div class="heritage-grid">
+        <div class="heritage-grid">
 
-        <!-- Card 1 -->
-        <a href="explore.html" class="heritage-card">
+            <!-- Card 1 -->
+            <a href="explore.html" class="heritage-card">
 
-            <img src="monkwalk.jpeg" alt="Sacred Bihar">
+                <img src="monkwalk.jpeg" alt="Sacred Bihar">
 
-            <div class="heritage-content">
+                <div class="heritage-content">
 
-                <h3>Sacred Bihar</h3>
+                    <h3>Sacred Bihar</h3>
 
-                <p>
-                    Walk the paths where millions still come seeking peace,
-                    faith, and meaning.
-                </p>
+                    <p>
+                        Walk the paths where millions still come seeking peace,
+                        faith, and meaning.
+                    </p>
 
-            </div>
+                </div>
 
-        </a>
+            </a>
 
-        <!-- Card 2 -->
-        <a href="explore.html" class="heritage-card">
+            <!-- Card 2 -->
+            <a href="explore.html" class="heritage-card">
 
-            <img src="lakhisarai.jpeg" alt="History, Art & Civilization">
+                <img src="lakhisarai.jpeg" alt="History, Art & Civilization">
 
-            <div class="heritage-content">
+                <div class="heritage-content">
 
-                <h3>History, Art & Civilization</h3>
+                    <h3>History, Art & Civilization</h3>
 
-                <p>
-                    Masterpieces carved across centuries.
-                </p>
+                    <p>
+                        Masterpieces carved across centuries.
+                    </p>
 
-            </div>
+                </div>
 
-        </a>
+            </a>
 
-        <!-- Card 3 -->
-        <a href="explore.html" class="heritage-card">
+            <!-- Card 3 -->
+            <a href="explore.html" class="heritage-card">
 
-            <img src="manjhi road (1).jpeg" alt="Hidden Bihar">
+                <img src="manjhi road (1).jpeg" alt="Hidden Bihar">
 
-            <div class="heritage-content">
+                <div class="heritage-content">
 
-                <h3>Hidden Bihar</h3>
+                    <h3>Hidden Bihar</h3>
 
-                <p>
-                    This mountain was cut by hands, for someone's love.
-                    Beyond the monuments, hidden Bihar awaits.
-                </p>
+                    <p>
+                        This mountain was cut by hands, for someone's love.
+                        Beyond the monuments, hidden Bihar awaits.
+                    </p>
 
-            </div>
+                </div>
 
-        </a>
+            </a>
 
-        <!-- Card 4 -->
-        <a href="explore.html" class="heritage-card">
+            <!-- Card 4 -->
+            <a href="explore.html" class="heritage-card">
 
-            <img src="dolphin.jpg" alt="Nature, Food & Adventure">
+                <img src="dolphin.jpg" alt="Nature, Food & Adventure">
 
-            <div class="heritage-content">
+                <div class="heritage-content">
 
-                <h3>Nature, Food & Adventure</h3>
+                    <h3>Nature, Food & Adventure</h3>
 
-                <p>
-                    Blind dolphins, wildlife, local cuisines—
-                    another side of Bihar.
-                </p>
+                    <p>
+                        Blind dolphins, wildlife, local cuisines—
+                        another side of Bihar.
+                    </p>
 
-            </div>
+                </div>
 
-        </a>
+            </a>
 
-    </div>
+        </div>
 
-</section>
+    </section>
     <section class="final-cta">
 
-    <a href="explore.html" class="final-cta-btn">
-        Explore all our tours &amp; experiences
-    </a>
+        <a href="explore.html" class="final-cta-btn">
+            Explore all our tours &amp; experiences
+        </a>
 
-</section>
+    </section>
 
 
     <!-- =============================================
@@ -596,62 +412,35 @@
     <!-- =============================================
        FOOTER
        ============================================= -->
-<footer class="footer">
+    <footer class="footer">
 
-    <div class="footer-socials">
+        <div class="footer-socials">
 
-        <!-- Add only the social icons that are actually live -->
-        <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+            <!-- Add only the social icons that are actually live -->
+            <a href="#"><img src="instagram.svg" alt="Instagram"></a>
 
-        <a href="#"><img src="youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="youtube.svg" alt="YouTube"></a>
 
-        <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="facebook.svg" alt="Facebook"></a>
 
-    </div>
+        </div>
 
-    <p class="footer-copy">
-        © 2026 TripVihara
-    </p>
+        <p class="footer-copy">
+            © 2026 TripVihara
+        </p>
 
-    <p class="footer-tagline">
-        Thoughtfully designed experiences inspired by Bihar's culture,
-        history, and stories.
-    </p>
+        <p class="footer-tagline">
+            Thoughtfully designed experiences inspired by Bihar's culture,
+            history, and stories.
+        </p>
 
-</footer>
+    </footer>
 
 
     <!-- =============================================
        JAVASCRIPT — Mobile nav toggle
        ============================================= -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        // Toggle mobile menu open/closed
-        function toggleNav() {
-            navLinks.classList.toggle('open');
-        }
-
-        hamburger.addEventListener('click', toggleNav);
-        hamburger.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') toggleNav();
-        });
-
-        // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
-
-        // Subtle navbar shadow on scroll
-       
-
-        /* ── HERO SLIDESHOW ─────────────────────────────────────────
-           ✏️ TOTAL_SLIDES   → raise by 1 each time you add a slide
-           ✏️ SLIDE_INTERVAL → ms between auto-advances (5000 = 5 sec)
-        ─────────────────────────────────────────────────────────── */
-
-    </script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>
