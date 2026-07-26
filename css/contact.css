@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    background: #4A3228;
+    background: #F4EBDD;
     color: var(--warm-white);
     font-family: var(--font-body);
     font-weight: 300;
@@ -144,180 +144,177 @@ a {
     transition: all 0.3s;
 }
 
-.contact-section {
+/* =========================================
+   CONTACT SECTION
+========================================= */
 
-    background: #F4EBDD;
-
-    padding: 100px 80px 140px;
-
+.contact-section{
+    background:#F4EBDD;
+    padding:120px 0 140px;
 }
 
-.contact-container {
-    width: 100%;
-    max-width:1180px;
+.contact-container{
+    width:100%;
+    max-width:900px;
     margin:0 auto;
-    display:grid;
-    grid-template-columns:460px 1fr;
-    gap:120px;
-    align-items:start;
+    padding:0 40px;
 }
 
-.contact-label {
+/* ---------- Label ---------- */
 
-    font-family: Inter, sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 500;
-
-    letter-spacing: .14em;
-
-    text-transform: uppercase;
-
-    color: #C8922A;
-
-    margin-bottom: 28px;
-
+.contact-label{
+    font-family:Inter,sans-serif;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#C8922A;
+    margin-bottom:26px;
 }
 
-.contact-heading {
+/* ---------- Heading ---------- */
 
-    font-family: "Cormorant Garamond", serif;
+.contact-heading{
 
-    font-size: 48px;
+    font-family:"Cormorant Garamond",serif;
 
-    font-weight: 600;
+    font-size:58px;
 
-    line-height: 1.18;
+    line-height:1.16;
 
-    color: #2B1D0E;
-    max-width: 430px;
+    font-weight:600;
 
-    margin-bottom: 70px;
+    color:#2B1D0E;
 
-}
-.contact-left{
-    max-width:440px;
-}
+    max-width:820px;
 
-.contact-details {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 40px;
-
+    margin-bottom:70px;
 }
 
-.contact-details p {
+/* ---------- Contact Details ---------- */
 
-    font-family: Inter, sans-serif;
+.contact-details{
 
-    font-size: 16px;
+    max-width:430px;
 
-    line-height: 1.8;
-
-    color: #6B4F3A;
-
+    margin-bottom:90px;
 }
 
-.contact-details span {
+.contact-details p{
 
-    display: block;
+    font-family:Inter,sans-serif;
 
-    font-weight: 600;
+    font-size:17px;
 
-    color: #2B1D0E;
+    line-height:1.9;
 
-    margin-bottom: 6px;
+    color:#6B4F3A;
 
+    margin-bottom:32px;
 }
 
-.contact-response {
+.contact-details span{
 
-    color: #8A6D47;
+    display:block;
 
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#2B1D0E;
+
+    margin-bottom:6px;
 }
 
-.contact-form {
+.contact-response{
+
+    color:#8A6D47;
+}
+
+/* ---------- Form ---------- */
+
+.contact-form{
+
+    width:100%;
 
     display:flex;
+
     flex-direction:column;
-    gap:38px;
-    padding-top:80px;
+
+    gap:42px;
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea{
 
-    width: 100%;
+    width:100%;
 
-    padding: 16px 0;
+    border:none;
 
-    border: none;
+    border-bottom:1px solid #CDB79A;
 
-    border-bottom: 1px solid #C8B59A;
+    background:transparent;
 
-    background: transparent;
+    padding:0 0 16px;
 
-    font-family: Inter, sans-serif;
+    font-family:Inter,sans-serif;
 
-    font-size: 16px;
+    font-size:17px;
 
-    color: #2B1D0E;
+    color:#2B1D0E;
 
-    outline: none;
+    outline:none;
 
+    transition:border-color .25s;
+}
+
+.contact-form textarea{
+
+    min-height:170px;
+
+    resize:vertical;
 }
 
 .contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.contact-form textarea::placeholder{
 
-    color: #8C7865;
-
+    color:#8D7864;
 }
 
-.contact-form textarea {
+.contact-form input:focus,
+.contact-form textarea:focus{
 
-    min-height: 180px;
-
-    resize: vertical;
-
+    border-color:#C8922A;
 }
 
-.contact-form button {
+/* ---------- Button ---------- */
 
-    align-self: flex-start;
+.contact-form button{
 
-    margin-top: 40px;
+    align-self:flex-start;
 
-    padding: 20px 52px;
+    margin-top:20px;
 
-    border: none;
+    background:#C8922A;
 
-    background: #C8922A;
+    color:#F5F0E6;
 
-    color: #F5F0E6;
+    border:none;
 
-    font-family: Inter, sans-serif;
+    padding:18px 46px;
 
-    font-size: 18px;
+    font-size:17px;
 
-    font-weight: 500;
+    font-family:Inter,sans-serif;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    transition: background .25s ease;
-
+    transition:.25s;
 }
 
-.contact-form button:hover {
+.contact-form button:hover{
 
-    background: #B8831F;
-
+    background:#B8841F;
 }
-
 /* =============================================
        HERO SECTION
        ============================================= */
