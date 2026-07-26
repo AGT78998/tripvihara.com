@@ -375,60 +375,36 @@ a {
     padding: 0 64px;
 
 }
-
-.story-left .story-image {
-
-    flex: 1.85;
-
+.story-row.story-left {
+    flex-direction: row; /* Image on Left, Content on Right */
 }
 
-.story-left .story-content {
-
-    flex: 1;
-
+.story-row.story-right {
+    flex-direction: row-reverse; /* Content on Left, Image on Right */
 }
 
-.story-right .story-content {
-
-    flex: 1.5;
-
-}
-
-.story-right .story-image {
-
-    flex: 1;
-
-}
-
+.story-left .story-image,
+.story-left .story-content,
+.story-right .story-image,
+.story-right .story-content,
+.story-right-large .story-image,
 .story-right-large .story-content {
-
-    flex: 2.3;
-
+    flex: 1; /* Makes all image wrappers equal size */
 }
 
-.story-right-large .story-image {
-
-    flex: 1;
-
-}
-
+/* ── Enforce identical height across all story images ── */
 .story-image img {
-
     width: 100%;
-
-    aspect-ratio: 4/5;
-
-    object-fit: cover;
-
+    height: 380px; /* <--- Adjust this single number to change the length for ALL 3 images at once */
+    object-fit: cover; /* Crops neatly so pictures don't stretch or distort */
     display: block;
-
 }
 
 .story-content h2 {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 30px;
+    font-size: 722px;
 
     font-weight: 600;
 
@@ -987,11 +963,11 @@ a {
 }
 
 .claim-container {
-    max-width: 100%;
+    max-width: 77%;
 }
 
 .claim-text {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.4;
 }
 
