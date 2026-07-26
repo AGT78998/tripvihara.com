@@ -463,12 +463,22 @@ a {
     padding: 110px 24px;
 
 }
+.guardian-chapter {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2B1D0E; /* Dark brown text color */
+    margin-bottom: 28px;
+}
 
 .guardian-container {
 
     max-width: 700px;
 
     margin: 0 auto;
+    text-align: center;
 
 }
 
