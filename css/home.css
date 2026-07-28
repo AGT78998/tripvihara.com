@@ -228,7 +228,7 @@ a {
     position: absolute;
 
 
-    top: 7%;
+    top: 10%;
     left: 72px;
 
     bottom: auto;
@@ -933,7 +933,7 @@ a {
     .hero-heading {
         font-family: 'Cormorant Garamond', serif;
         font-weight: 600;
-        font-size: 38px;
+        font-size: 30px;
 
         line-height: 1.12;
         letter-spacing: 0.03em;
