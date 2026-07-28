@@ -967,7 +967,7 @@ a {
     }
 
     .nav-left {
-        display: none;
+        display: none !important;
     }
 
     .mobile-only {
@@ -977,7 +977,7 @@ a {
     .mobile-only a {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 0px;
 
         font-family: Inter, sans-serif;
         font-size: 1rem;
