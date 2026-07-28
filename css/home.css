@@ -375,7 +375,7 @@ a {
 
     align-items: center;
 
-    gap: 80px;
+    gap: 56px;
 
     padding: 0 64px;
 
@@ -392,13 +392,15 @@ a {
 }
 
 .story-left .story-image,
-.story-left .story-content,
 .story-right .story-image,
+.story-right-large .story-image {
+    flex: 0 0 65%;
+}
+
+.story-left .story-content,
 .story-right .story-content,
-.story-right-large .story-image,
 .story-right-large .story-content {
-    flex: 1;
-    /* Makes all image wrappers equal size */
+    flex: 0 0 35%;
 }
 
 /* ── Enforce identical height across all story images ── */
