@@ -973,6 +973,18 @@ a {
     .mobile-only {
         display: block;
     }
+    .claim-container {
+    max-width: 72% !important;
+    margin: 0 auto;
+}
+
+.claim-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px !important;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
+}
 
     .mobile-only a {
         display: flex;
