@@ -375,9 +375,9 @@ a {
 
     align-items: center;
 
-    gap: 56px;
+    gap: 40px;
 
-    padding: 0 64px;
+    padding: 0 40px;
 
 }
 
@@ -417,7 +417,7 @@ a {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 36px;
+    font-size: 32px;
 
     font-weight: 600;
 
@@ -888,6 +888,27 @@ a {
 .hero-heading span {
     color: #C8922A;
 }
+@media (max-width: 1400px) {
+
+    .story-row {
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    .story-left .story-image,
+    .story-right .story-image,
+    .story-right-large .story-image {
+        flex: 1.5;
+    }
+
+    .story-left .story-content,
+    .story-right .story-content,
+    .story-right-large .story-content {
+        flex: 1;
+    }
+
+}
+
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
