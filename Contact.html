@@ -12,6 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />    
 
     <link rel="stylesheet" href="css/contact.css">
 </head>
@@ -55,29 +58,44 @@
         </div>
     </nav>
 
-    <div class="contact-container">
+    <!-- =============================================
+     CONTACT SECTION
+============================================= -->
 
-        <div class="contact-info">
+    <section class="contact-section">
 
-            <p class="contact-label">
-                CONTACT US
-            </p>
+        <!-- Heading -->
+        <div class="contact-header">
 
-            <h1 class="contact-heading">
-                More than 2,000 years ago, the Greek ambassador Megasthenes crossed continents to reach Pataliputra.
-                Today, discovering Bihar begins with something much simpler — a conversation with us.
+            <h1 class="contact-title">
+                Contact Us
             </h1>
 
+            <p class="contact-intro">
+                More than 2,000 years ago, the Greek ambassador Megasthenes crossed continents to reach Pataliputra.
+                Today, discovering Bihar begins with something much simpler — a conversation with us.
+            </p>
+
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="contact-container">
+
+            <!-- Left Column -->
             <div class="contact-details">
 
                 <p>
                     <span>WhatsApp</span>
-                    +91 XXXXX XXXXX
+                    <a href="https://wa.me/91XXXXXXXXXX">
+                        +91 XXXXX XXXXX
+                    </a>
                 </p>
 
                 <p>
                     <span>Email</span>
-                    hello@tripvihara.com
+                    <a href="mailto:hello@tripvihara.com">
+                        hello@tripvihara.com
+                    </a>
                 </p>
 
                 <p class="contact-response">
@@ -86,31 +104,39 @@
 
             </div>
 
+            <!-- Right Column -->
+            <form class="contact-form">
+
+                <label>Name</label>
+                <input type="text">
+
+                <label>Email</label>
+                <input type="email">
+
+                <label>WhatsApp</label>
+                <input type="text">
+
+                <label>Country</label>
+                <input type="text">
+
+                <label>Travel dates</label>
+                <input type="text">
+
+                <label>Number of travelers</label>
+                <input type="text">
+
+                <label>Message</label>
+                <textarea></textarea>
+
+                <button type="submit">
+                    Send Inquiry
+                </button>
+
+            </form>
+
         </div>
 
-        <form class="contact-form">
-
-            <input type="text" placeholder="Name">
-
-            <input type="email" placeholder="Email">
-
-            <input type="text" placeholder="WhatsApp">
-
-            <input type="text" placeholder="Country">
-
-            <input type="text" placeholder="Travel dates">
-
-            <input type="text" placeholder="Number of travelers">
-
-            <textarea placeholder="Message"></textarea>
-
-            <button type="submit">
-                Send Inquiry
-            </button>
-
-        </form>
-
-    </div>
+    </section>
 
     <!-- =============================================
        FOOTER
