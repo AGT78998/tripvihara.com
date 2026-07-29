@@ -426,6 +426,156 @@ a {
     background:#B8831F;
 }
 /* =============================================
+   ABOUT SECTION
+============================================= */
+
+.about-section{
+    background:#F4EBDD;
+    padding:120px 0 140px;
+}
+
+.about-container{
+
+    max-width:1280px;
+
+    margin:0 auto;
+
+    padding:0 72px;
+
+    display:flex;
+
+    
+
+    gap:80px;
+
+    align-items:center;
+}
+
+/* ---------- Founder Image ---------- */
+
+.about-image{
+
+    width:82% !important;
+}
+.about-header{
+
+    max-width:980px;
+
+    margin:0 auto 100px;
+
+    padding:0 40px;
+
+    text-align:center;
+}
+
+.about-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:40px;
+
+    font-weight:600;
+
+    color:#2B1D0E;
+
+    margin-bottom:28px;
+
+    line-height:1.2;
+}
+
+.about-intro{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-style:italic;
+
+    font-size:24px;
+
+    line-height:1.6;
+
+    color:#2B1D0E;
+
+    max-width:900px;
+
+    margin:0 auto;
+}
+
+.about-image img{
+
+    width:82%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    display:block;
+
+    border:1px solid #E0D4C0;
+}
+
+/* ---------- Content ---------- */
+
+.about-content{
+
+    width:100%;
+}
+
+/* Quote */
+
+.about-quote{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-style:italic;
+
+    font-size:24px;
+
+    line-height:1.6;
+
+    color:#2B1D0E;
+
+    margin-bottom:48px;
+
+    max-width:760px;
+}
+
+/* Body */
+
+.about-note{
+
+    font-family:Inter,sans-serif;
+
+    font-size:18px;
+
+    font-weight:400;
+
+    line-height:1.7;
+
+    color:#2B1D0E;
+
+    max-width:680px;
+
+    margin-bottom:48px;
+}
+
+.about-note p{
+
+    margin-bottom:28px;
+}
+
+/* Signature */
+
+.about-signature{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#2B1D0E;
+}
+/* =============================================
        HERO SECTION
        ============================================= */
 /* ── HERO SLIDESHOW ─────────────────────── */
@@ -510,6 +660,7 @@ a {
     color: var(--gold);
     margin-bottom: 14px;
 }
+
 
 /* ✏️ TO CHANGE TITLE → edit <h1 class="slide-title"> in each slide */
 .slide-title {
@@ -1247,6 +1398,82 @@ a {
         padding:18px 24px;
 
         font-size:16px;
+    }
+    .about-section{
+        padding:80px 24px;
+    }
+
+    .about-container{
+
+
+        display:flex;
+
+    flex-direction:column;
+
+    gap:40px;
+
+    align-items:center;
+
+    padding:0;
+    }
+
+    .about-image{
+        justify-self: center;
+
+        width:100%;
+
+        max-width:420px;
+
+        margin:0 auto;
+    }
+
+    .about-image img{
+
+        width:100%;
+
+        aspect-ratio:4/5;
+
+        object-fit:cover;
+    }
+
+    .about-content{
+
+        width:100%;
+        max-width: 680px;
+    }
+
+    .about-quote{
+
+        font-size:19px;
+
+        line-height:1.6;
+
+        margin-bottom:32px;
+
+        max-width:100%;
+    }
+
+    .about-note{
+
+        font-size:17px;
+
+        line-height:1.7;
+
+        max-width:100%;
+
+        margin-bottom:32px;
+    }
+
+    .about-note p{
+
+        margin-bottom:24px;
+    }
+
+    .about-signature{
+
+        font-size:18px;
+
+        line-height:1.4;
     }
 
 
