@@ -1624,6 +1624,10 @@ a {
     .guardian-intro{
 
         font-size:19px;
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        transform: none;
 
         line-height:1.6;
 
