@@ -53,7 +53,7 @@ a {
        ============================================= */
 /* To change the brand name → edit the <span class="brand-name"> in HTML below */
 .navbar {
-    position: relative;
+    position: sticky;
     top: 0;
 
     right: 0;
@@ -65,31 +65,32 @@ a {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 48px;
 
 }
 
 /* ── Logo / Brand ─────────────────────────── */
 .brand {
-
-    align-items: center;
-    gap: 12px;
+    position: absolute;
 
     left: 50%;
+    top: 50%;
 
-    position: static;
-    transform: none;
+    transform: translate(-50%, -50%);
 
     display: flex;
-    margin-left: 80px;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
 }
 
 
 /* ✏️  CHANGE WEBSITE NAME — edit text inside <span class="brand-name"> */
 .brand-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
+    font-size: 31px;
     font-weight: 600;
     letter-spacing: 0.03em;
     color: #C8922A;
@@ -103,7 +104,7 @@ a {
     display: flex;
     gap: 36px;
     position: absolute;
-    right: 5vw;
+    right: 131px;
 }
 
 .nav-links a {
@@ -116,6 +117,31 @@ a {
     position: relative;
     padding-bottom: 4px;
     transition: color 0.2s ease;
+}
+
+.nav-left {
+    position: absolute;
+    left: 126px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.nav-left .nav-link {
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #F5F0E6;
+    transition: color 0.2s ease;
+}
+
+.nav-left .nav-link:hover {
+    color: #C8922A;
 }
 
 
