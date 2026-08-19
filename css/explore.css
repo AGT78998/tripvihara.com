@@ -1,0 +1,764 @@
+/* =============================================
+   ROOT / RESET
+============================================= */
+
+:root {
+    --parchment: #F4EBDD;
+    --deep-brown: #2B1D0E;
+    --temple-gold: #C8922A;
+    --hairline: #E0D4C0;
+    --muted-brown: #8A7355;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--parchment);
+    color: var(--deep-brown);
+
+    font-family: "Inter", sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =============================================
+   NAVBAR
+============================================= */
+
+.navbar {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8vw;
+
+    background: var(--deep-brown);
+}
+
+.brand {
+    color: var(--parchment);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+
+.brand span {
+    color: var(--temple-gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--parchment);
+
+    font-size: 15px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--temple-gold);
+}
+
+.hamburger {
+    display: none;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+
+    width: 26px;
+    height: 1px;
+
+    margin: 6px 0;
+
+    background: var(--parchment);
+}
+
+
+/* =============================================
+   HERO
+============================================= */
+
+.explore-hero {
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 100px 24px 75px;
+
+    text-align: center;
+}
+
+.explore-hero h1 {
+    margin: 0 0 22px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 52px;
+    font-weight: 600;
+
+    color: var(--deep-brown);
+}
+
+.explore-hero p {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: var(--deep-brown);
+}
+
+
+/* =============================================
+   TOUR SECTION
+============================================= */
+
+.tour-section {
+    width: 100%;
+
+    padding: 0 6vw 100px;
+}
+
+.tour-grid {
+    max-width: 1400px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    margin: 0 auto;
+}
+
+
+/* =============================================
+   TOUR CARD
+============================================= */
+
+.tour-card {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--parchment);
+
+    border: 1px solid var(--hairline);
+    border-radius: 0;
+
+    overflow: hidden;
+
+    box-shadow: none;
+}
+
+.tour-card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+.tour-card-content {
+    padding: 26px;
+}
+
+.tour-name {
+    margin: 0 0 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.1;
+
+    color: var(--deep-brown);
+}
+
+.tour-route {
+    margin: 0 0 10px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: var(--muted-brown);
+}
+
+.tour-tag {
+    margin: 0 0 20px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    color: var(--temple-gold);
+}
+
+.tour-hook {
+    margin: 0 0 24px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--deep-brown);
+}
+
+
+/* =============================================
+   TOUR META
+============================================= */
+
+.tour-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--hairline);
+}
+
+.tour-duration {
+    font-size: 15px;
+    line-height: 1.4;
+
+    color: var(--muted-brown);
+}
+
+.view-tour-btn {
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: var(--temple-gold);
+
+    cursor: pointer;
+}
+
+.view-tour-btn:hover {
+    color: var(--deep-brown);
+}
+
+
+/* =============================================
+   EXPANDED TOUR CONTENT
+============================================= */
+
+.tour-expanded {
+    display: none;
+
+    margin-top: 28px;
+    padding-top: 28px;
+
+    border-top: 1px solid var(--hairline);
+}
+
+.tour-card.active .tour-expanded {
+    display: block;
+}
+
+.expanded-detail {
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--deep-brown);
+}
+
+.expanded-detail strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: var(--deep-brown);
+}
+
+.expanded-detail p {
+    margin: 0;
+}
+
+.expanded-detail ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.expanded-detail li {
+    margin-bottom: 7px;
+}
+
+
+/* =============================================
+   TOUR EXPANDED ACTIONS
+============================================= */
+
+.tour-expanded-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.tour-whatsapp,
+.tour-enquiry {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 20px;
+
+    flex: 1;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    border-radius: 0;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.tour-whatsapp {
+    background: var(--temple-gold);
+
+    border: 1px solid var(--temple-gold);
+
+    color: var(--parchment);
+}
+
+.tour-whatsapp:hover {
+    background: var(--deep-brown);
+
+    border-color: var(--deep-brown);
+}
+
+.tour-enquiry {
+    background: transparent;
+
+    border: 1px solid var(--deep-brown);
+
+    color: var(--deep-brown);
+}
+
+.tour-enquiry:hover {
+    background: var(--deep-brown);
+
+    color: var(--parchment);
+}
+
+
+/* =============================================
+   BOTTOM PROMPT
+============================================= */
+
+.explore-help {
+    max-width: 680px;
+
+    margin: 0 auto;
+    padding: 100px 24px;
+
+    text-align: center;
+}
+
+.explore-help h2 {
+    margin: 0 0 35px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 600;
+
+    color: var(--deep-brown);
+}
+
+.explore-help-actions {
+    display: flex;
+    justify-content: center;
+
+    gap: 16px;
+}
+
+.whatsapp-button,
+.enquiry-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+    height: 54px;
+
+    padding: 0 28px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    border-radius: 0;
+    box-shadow: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.whatsapp-button {
+    background: var(--temple-gold);
+
+    border: 1px solid var(--temple-gold);
+
+    color: var(--parchment);
+}
+
+.whatsapp-button:hover {
+    background: var(--deep-brown);
+
+    border-color: var(--deep-brown);
+}
+
+.enquiry-button {
+    background: transparent;
+
+    border: 1px solid var(--deep-brown);
+
+    color: var(--deep-brown);
+}
+
+.enquiry-button:hover {
+    background: var(--deep-brown);
+
+    color: var(--parchment);
+}
+
+
+/* =============================================
+   FOOTER
+============================================= */
+
+.footer {
+    padding: 70px 24px;
+
+    background: var(--deep-brown);
+
+    color: var(--parchment);
+
+    text-align: center;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-bottom: 28px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-socials img {
+    width: 20px;
+    height: 20px;
+
+    filter: brightness(0) invert(1);
+}
+
+.footer-copy,
+.footer-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.footer-copy {
+    margin: 0 0 12px;
+
+    font-size: 15px;
+}
+
+.footer-tagline {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    opacity: 0.8;
+}
+
+
+/* =============================================
+   MOBILE RESPONSIVE
+============================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        min-height: 68px;
+
+        padding: 0 20px;
+    }
+
+    .brand {
+        font-size: 27px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 15px 20px 20px;
+
+        background: var(--deep-brown);
+
+        border-top: 1px solid rgba(244, 235, 221, 0.15);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+
+        padding: 14px 0;
+
+        font-size: 16px;
+    }
+
+
+    /* HERO */
+
+    .explore-hero {
+        padding: 70px 20px 55px;
+    }
+
+    .explore-hero h1 {
+        margin-bottom: 18px;
+
+        font-size: 40px;
+    }
+
+    .explore-hero p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+
+    /* TOUR GRID */
+
+    .tour-section {
+        padding: 0 20px 70px;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+
+    /* TOUR CARD */
+
+    .tour-card-content {
+        padding: 20px;
+    }
+
+    .tour-name {
+        font-size: 27px;
+        line-height: 1.15;
+    }
+
+    .tour-route {
+        font-size: 15px;
+    }
+
+    .tour-tag {
+        font-size: 13px;
+    }
+
+    .tour-duration {
+        font-size: 15px;
+    }
+
+    .tour-hook {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+
+    /* EXPANDED CONTENT */
+
+    .tour-expanded {
+        margin-top: 22px;
+        padding-top: 22px;
+    }
+
+    .expanded-detail {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* BUTTONS */
+
+    .tour-meta {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 16px;
+    }
+
+    .tour-duration {
+        text-align: left;
+    }
+
+    .view-tour-btn {
+        width: 100%;
+        min-height: 52px;
+
+        padding: 0;
+
+        border: 1px solid var(--temple-gold);
+    }
+
+    .tour-expanded-actions {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .tour-expanded-actions a {
+        width: 100%;
+        min-height: 52px;
+    }
+
+
+    /* BOTTOM PROMPT */
+
+    .explore-help {
+        padding: 70px 20px;
+    }
+
+    .explore-help h2 {
+        margin-bottom: 28px;
+
+        font-size: 34px;
+    }
+
+    .explore-help-actions {
+        flex-direction: column;
+
+        gap: 12px;
+
+        width: 100%;
+    }
+
+    .whatsapp-button,
+    .enquiry-button {
+        width: 100%;
+        min-height: 54px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 55px 20px;
+    }
+
+    .footer-socials {
+        gap: 20px;
+    }
+
+    .footer-copy {
+        font-size: 14px;
+    }
+
+    .footer-tagline {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+}
