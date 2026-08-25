@@ -573,6 +573,7 @@ img {
 
     .hamburger {
         display: block;
+        margin-left: auto;
     }
 
     .nav-links {
