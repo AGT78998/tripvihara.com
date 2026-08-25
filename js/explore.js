@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.classList.add("active");
 
                 toggleButton.textContent =
-                    "Close Tour";
+                    "Close";
 
             }
 
