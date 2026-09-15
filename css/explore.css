@@ -66,6 +66,9 @@ img {
     letter-spacing: 0.04em;
     text-decoration: none;
 }
+.mobile-only {
+    display: none !important;
+}
 
 .brand span {
     color: var(--temple-gold);
@@ -569,6 +572,29 @@ img {
 
     .brand {
         font-size: 27px;
+    }
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        /* your existing styles */
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background: #2B1D0E;
+        padding: 48px 32px;
+        gap: 36px;
+        z-index: 999;
+    }
+
+    .nav-links.open li.mobile-only {
+        display: list-item !important;
     }
 
     .hamburger {
