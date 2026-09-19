@@ -454,19 +454,20 @@ a {
     padding: 0 24px;
 
 }
+@font-face {
+    font-family: "BaskervvilleCustom";
+    src: url("./fonts/Baskervville-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
 
 .story-ending h2 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 28px;
-
-    font-weight: 600;
-
+    font-family: "BaskervvilleCustom", serif !important;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
     color: #2B1D0E;
-
     line-height: 1.3;
-
 }
 
 .guardian-section {

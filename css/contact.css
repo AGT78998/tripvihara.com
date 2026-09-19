@@ -173,10 +173,26 @@ a {
 /* =========================================
    CONTACT SECTION
 ========================================= */
+.contact-navigation {
+    width: 100%;
+    padding: 45px 50px 20px;
 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    text-align: center;
+}
+
+.contact-navigation-item {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2B1D0E;
+}
 .contact-section {
     background: #F4EBDD;
-    padding: 120px 0 140px;
+    padding: 68px 0 140px;
 }
 
 .contact-header {
@@ -223,8 +239,8 @@ a {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 72px;
-    display: grid;
-    grid-template-columns: 320px 1fr;
+    display: flex;
+    justify-content: center;
     gap: 120px;
     align-items: start;
 }
@@ -465,7 +481,7 @@ a {
 
 .about-section {
     background: #F4EBDD;
-    padding: 120px 0 140px;
+    padding: 0px 0 140px;
 }
 
 .about-container {
@@ -524,7 +540,7 @@ a {
 
     font-style: italic;
 
-    font-size: 19px;
+    font-size: 24px;
 
     line-height: 1.6;
 
@@ -619,7 +635,7 @@ a {
 
     background: #F4EBDD;
 
-    padding: 120px 0 140px;
+    padding: 70px 0 140px;
 }
 
 .guardian-container {
@@ -1048,13 +1064,7 @@ a {
 
 }
 
-.guardian-section {
 
-    background: #F4EBDD;
-
-    padding: 110px 24px;
-
-}
 
 .guardian-container {
 
@@ -1130,7 +1140,7 @@ a {
 
     background: #F4EBDD;
 
-    padding: 120px 0 140px;
+    padding: 62px 0 140px;
 }
 
 /* Header */
