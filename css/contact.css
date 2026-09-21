@@ -482,6 +482,7 @@ a {
 .about-section {
     background: #F4EBDD;
     padding: 0px 0 140px;
+    margin-top:-81px;
 }
 
 .about-container {
@@ -498,7 +499,7 @@ a {
 
     gap: 80px;
 
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* ---------- Founder Image ---------- */
@@ -506,6 +507,7 @@ a {
 .about-image {
 
     width: 82% !important;
+    transform: translateY(70px);
 }
 
 .about-header {
@@ -636,6 +638,7 @@ a {
     background: #F4EBDD;
 
     padding: 70px 0 140px;
+    margin-top: -77px;
 }
 
 .guardian-container {
