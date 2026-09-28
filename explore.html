@@ -14,6 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/explore.css">
@@ -26,27 +28,24 @@
     ============================================= -->
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        
-
-
-        <a href="/" class="brand" aria-label="Home">
-
-            <span class="brand-name">
-                Trip<span>Vihara</span>
-            </span>
-        </a>
+        <div class="nav-left">
+            <a href="https://www.instagram.com/tripvihara?utm_source=qr&stkn=NHJ6aTQzYW5tNmN5" aria-label="Instagram" class="nav-link icon-link">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/TripVihara" aria-label="X (Twitter)" class="nav-link icon-link">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#about" class="nav-link">About Us</a>
+        </div>
         <ul class="nav-links" id="navLinks">
 
-            <li>
-                <a href="explore.html" class="active">Explore</a>
-            </li>
+            <li><a href="explore.html">Explore</a></li>
 
-            <li>
-                <a href="Contact.html">Contact</a>
-            </li>
+            <li><a href="Contact.html">Contact</a></li>
 
+            <!-- Mobile only -->
             <li class="mobile-only">
-                <a href="index.html#about">About Us</a>
+                <a href="#about">About Us</a>
             </li>
 
             <li class="mobile-only">
@@ -56,7 +55,7 @@
             </li>
 
             <li class="mobile-only">
-                <a href="https://x.com" target="_blank">
+                <a href="https://x.com/TripVihara" target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
             </li>
@@ -64,7 +63,15 @@
         </ul>
 
 
+        <a href="/" class="brand" aria-label="Home">
 
+            <span class="brand-name">
+                Trip<span>Vihara</span>
+            </span>
+        </a>
+
+
+        
 
 
         <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
@@ -84,7 +91,10 @@
         <h1>Explore Bihar</h1>
 
         <p>
-            Browse our journeys and find the experience that suits you.
+            Explore our journeys and find the experience that suits you.
+        </p>
+        <p>
+            Note: All our tours are customisable and can be changed as per your budget and convenience.
         </p>
 
     </section>
@@ -105,8 +115,10 @@
 
             <article class="tour-card">
 
-                <img class="tour-card-image" src="images/explore/trip 1.jpeg" alt="Mahavira Janmabhoomi" >
-                <span class="religion-badge">Jainism</span>
+                <div class="tour-image-wrapper">
+                    <img class="tour-card-image" src="images/explore/trip 1.jpeg" alt="Mahavira Janmabhoomi">
+                    
+                </div>
                 
 
                 <div class="tour-card-content">
@@ -129,60 +141,14 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-
-                            View Tour
-
-                        </button>
+                        
 
                     </div>
 
 
                     <!-- EXPANDED CONTENT -->
 
-                    <div class="tour-expanded">
-
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                                <li>Final inclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-
-                                Send Enquiry
-
-                            </a>
-
-                        </div>
-
-                    </div>
+                    
 
                 </div>
 
@@ -196,7 +162,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 2.jpeg" alt="Tour 2">
-                <span class="religion-badge">Jainism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -209,9 +175,7 @@
                     </p>
                     </p>
 
-                    <p class="tour-hook">
-                        One-line promise or description.
-                    </p>
+                    
 
                     <div class="tour-meta">
 
@@ -219,54 +183,12 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
+                    
 
                     </div>
 
 
-                    <div class="tour-expanded">
-
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                                <li>Final inclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
-
-                    </div>
+                    
 
                 </div>
 
@@ -280,7 +202,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 3.jpeg" alt="Tour 3">
-                <span class="religion-badge">Jainism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -292,9 +214,7 @@
                     </p>
                     </p>
 
-                    <p class="tour-hook">
-                        One-line promise or description.
-                    </p>
+                    
 
                     <div class="tour-meta">
 
@@ -302,48 +222,7 @@
                             2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -359,7 +238,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 4.jpeg" alt="Tour 4">
-                <span class="religion-badge">Jainism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -371,9 +250,7 @@
                     </p>
                     </p>
 
-                    <p class="tour-hook">
-                        One-line promise or description.
-                    </p>
+                    
 
                     <div class="tour-meta">
 
@@ -381,48 +258,7 @@
                             2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -438,7 +274,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 5.jpeg" alt="Tour 5">
-                <span class="religion-badge">Jainism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -450,9 +286,7 @@
                     </p>
                     </p>
 
-                    <p class="tour-hook">
-                        One-line promise or description.
-                    </p>
+                    
 
                     <div class="tour-meta">
 
@@ -460,48 +294,7 @@
                             2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -517,7 +310,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 6.jpeg" alt="Tour 6">
-                <span class="religion-badge">Jainism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -529,9 +322,7 @@
                     </p>
                     </p>
 
-                    <p class="tour-hook">
-                        One-line promise or description.
-                    </p>
+                    
 
                     <div class="tour-meta">
 
@@ -539,51 +330,9 @@
                             4 Days/ 3 Nights
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
+                    
 
                     </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
             </article>
@@ -613,48 +362,7 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -670,7 +378,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 8.jpeg" alt="Tour 8">
-                <span class="religion-badge">Sikhism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -688,48 +396,7 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -749,7 +416,7 @@
                 <div class="tour-card-content">
 
                     <h2 class="tour-name">The Gurus Heritage of Bihar</h2>
-                    <span class="religion-badge">Sikhism</span>
+                    
 
                     </p>
 
@@ -763,48 +430,7 @@
                             2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -824,7 +450,7 @@
                 <div class="tour-card-content">
 
                     <h2 class="tour-name">Bodhgaya: The place that changed the World</h2>
-                    <span class="religion-badge">Buddhism</span>
+                    
 
                     </p>
 
@@ -838,48 +464,7 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -895,7 +480,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 11.jpeg" alt="Tour 11">
-                <span class="religion-badge">Buddhism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -917,48 +502,7 @@
                             2 Nights/ 3 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -991,48 +535,7 @@
                             1 Day
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -1047,7 +550,7 @@
             <article class="tour-card">
 
                 <img class="tour-card-image" src="images/explore/trip 13.jpeg" alt="Tour 13">
-                <span class="religion-badge">Buddhism</span>
+                
 
                 <div class="tour-card-content">
 
@@ -1065,48 +568,7 @@
                             1 Nights/ 2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -1126,7 +588,7 @@
                 <div class="tour-card-content">
 
                     <h2 class="tour-name">Varanasi to Bodhgaya, Rajgir, Nalanda, Barabar Caves</h2>
-                    <span class="religion-badge">Buddhism</span>
+                    
 
                     </p>
 
@@ -1141,48 +603,7 @@
                         3 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -1215,48 +636,7 @@
                             1 Nights/ 2 Days
                         </span>
 
-                        <button class="view-tour-btn" type="button">
-                            View Tour
-                        </button>
-
-                    </div>
-
-
-                    <div class="tour-expanded">
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Included</strong>
-
-                            <ul>
-                                <li>Guardian Support</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="expanded-detail">
-
-                            <strong>What's Not Included</strong>
-
-                            <ul>
-                                <li>Final exclusions to be confirmed.</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="tour-expanded-actions">
-
-                            <a href="https://wa.me/91XXXXXXXXXX" class="tour-whatsapp" target="_blank">
-
-                                WhatsApp Us
-
-                            </a>
-
-                            <a href="Contact.html" class="tour-enquiry">
-                                Send Enquiry
-                            </a>
-
-                        </div>
+                    
 
                     </div>
 
@@ -1274,6 +654,9 @@
     ============================================= -->
 
     <section class="explore-help">
+        <p>
+            Note: All our tours are customisable and can be changed as per your budget and convenience.
+        </p>
 
         <h2>
             Need help choosing?
@@ -1281,7 +664,7 @@
 
         <div class="explore-help-actions">
 
-            <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-button" target="_blank">
+            <a href="https://wa.me/919015661671" class="whatsapp-button" target="_blank">
 
                 WhatsApp Us
 
@@ -1289,7 +672,7 @@
 
             <a href="Contact.html" class="enquiry-button">
 
-                Send Enquiry
+                Contact Us
 
             </a>
 

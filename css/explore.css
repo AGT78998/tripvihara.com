@@ -73,12 +73,23 @@ img {
 .brand span {
     color: var(--temple-gold);
 }
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav-left .nav-link {
+    color: var(--parchment);
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+}
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 34px;
-    margin-left: auto !important;
+    
 
     margin: 0;
     padding: 0;
@@ -276,24 +287,7 @@ img {
     color: var(--muted-brown);
 }
 
-.view-tour-btn {
-    padding: 0;
 
-    background: transparent;
-    border: none;
-
-    font-family: "Inter", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-
-    color: var(--temple-gold);
-
-    cursor: pointer;
-}
-
-.view-tour-btn:hover {
-    color: var(--deep-brown);
-}
 
 
 /* =============================================
@@ -558,22 +552,11 @@ img {
     position: relative;
 }
 
-.religion-badge {
-    position: absolute;
-    left: 12px;
-    bottom: 10px;
-
-    background: #F5F0E6;
-    color: #2B1D0E;
-
-    padding: 5px 12px;
-    border: 1px solid #2B1D0E;
-    border-radius: 6px;
-
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1;
+.tour-image-wrapper {
+    position: relative;
 }
+
+
 
 
 /* =============================================
