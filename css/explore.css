@@ -417,6 +417,9 @@ img {
 
     text-align: center;
 }
+.explore-help > p {
+    transform: translateY(-30px);
+}
 
 .explore-help h2 {
     margin: 0 0 35px;
@@ -566,6 +569,9 @@ img {
 @media (max-width: 768px) {
 
     /* NAVBAR */
+    .nav-left {
+    display: none !important;
+    }
 
     .navbar {
         min-height: 68px;
@@ -753,6 +759,9 @@ img {
 
     .explore-help {
         padding: 70px 20px;
+    }
+    .explore-help > p {
+    transform: translateY(-30px);
     }
 
     .explore-help h2 {
