@@ -418,7 +418,8 @@ img {
     text-align: center;
 }
 .explore-help > p {
-    transform: translateY(-30px);
+    transform: translateY(-70px);
+    font-size: 18px;
 }
 
 .explore-help h2 {
@@ -761,7 +762,7 @@ img {
         padding: 70px 20px;
     }
     .explore-help > p {
-    transform: translateY(-30px);
+    transform: translateY(-50px);
     }
 
     .explore-help h2 {
