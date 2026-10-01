@@ -1001,6 +1001,7 @@ a {
     .claim-container {
         max-width: 101% !important;
         margin: 0 auto;
+        padding: 0 30px;
     }
 
     .claim-text {
