@@ -21,15 +21,15 @@ navLinks.querySelectorAll('a').forEach(link => {
 const readMoreBtn = document.getElementById("readMoreBtn");
 const aboutMore = document.querySelector(".about-more");
 
-readMoreBtn.addEventListener("click", function () {
+if (readMoreBtn && aboutMore) {
+    const btnText = readMoreBtn.querySelector(".btn-text");
 
-    aboutMore.classList.toggle("show");
-    readMoreBtn.classList.toggle("active");
+    readMoreBtn.addEventListener("click", function () {
+        aboutMore.classList.toggle("show");
+        readMoreBtn.classList.toggle("active");
 
-    if (aboutMore.classList.contains("show")) {
-        readMoreBtn.innerHTML = 'Read Less <span>↑</span>';
-    } else {
-        readMoreBtn.innerHTML = 'Read More <span>↓</span>';
-    }
-
-});
+        btnText.textContent = aboutMore.classList.contains("show")
+            ? "Read Less"
+            : "Read More";
+    });
+}
