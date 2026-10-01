@@ -596,7 +596,7 @@ a {
     cursor: pointer;
 }
 
-.read-more-btn span {
+/* .read-more-btn span {
     display: inline-block;
     margin-left: 6px;
     transition: transform 0.3s ease;
@@ -604,7 +604,7 @@ a {
 
 .read-more-btn.active span {
     transform: rotate(180deg);
-}
+} */
 
 /* Quote */
 
