@@ -574,6 +574,38 @@ a {
     width: 100%;
 }
 
+.about-more {
+    display: none;
+}
+
+.about-more.show {
+    display: block;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    margin-top: 5px;
+
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6B4F3A;
+
+    cursor: pointer;
+}
+
+.read-more-btn span {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn.active span {
+    transform: rotate(180deg);
+}
+
 /* Quote */
 
 .about-quote {
