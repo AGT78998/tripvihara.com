@@ -184,6 +184,12 @@ a {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .contact-navigation {
+        display: none;
+    }
+}
+
 .contact-navigation-item {
     font-family: Inter, sans-serif;
     font-size: 16px;
