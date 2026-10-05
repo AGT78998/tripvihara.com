@@ -169,7 +169,13 @@ img {
     color: var(--deep-brown);
 }
 
+@media (max-width: 768px) {
 
+    .explore-hero h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+}
 /* =============================================
    TOUR SECTION
 ============================================= */
