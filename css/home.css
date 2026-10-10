@@ -565,6 +565,23 @@ a {
 
 }
 
+.round-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
+
+.round-images img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
 .heritage-section {
 
     background: #F4EBDD;
