@@ -926,6 +926,8 @@ a {
     .story-right .story-image,
     .story-right-large .story-image {
         flex: 1.5;
+        width: calc(100% - 96px);
+        max-width: calc(100% - 96px);
     }
 
     .story-left .story-content,
