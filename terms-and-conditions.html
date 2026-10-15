@@ -34,7 +34,7 @@
     body { background: var(--paper); }
 
     /* Typography is scoped to the page content so it never affects the navbar/footer */
-    .hero,
+    .terms-hero,
     main {
       color: var(--ink);
       font-family: "Jost", sans-serif;
@@ -44,8 +44,8 @@
 
     main a { color: var(--accent-dark); }
 
-    .hero {
-      padding: 62px 20px 36px;
+    .terms-hero {
+      padding: 150px 20px 36px;
       text-align: center;
     }
 
@@ -58,20 +58,20 @@
       text-transform: uppercase;
     }
 
-    .hero h1,
+    .terms-hero h1,
     .policy-card h2 {
       font-family: "Cormorant Garamond", serif;
       color: var(--accent-dark);
       line-height: 1.15;
     }
 
-    .hero h1 {
+    .terms-hero h1 {
       margin: 0;
       font-size: clamp(40px, 6vw, 58px);
       font-weight: 600;
     }
 
-    .hero p {
+    .terms-hero p {
       max-width: 650px;
       margin: 15px auto 0;
       color: var(--muted);
@@ -129,7 +129,7 @@
     .policy-note p:last-child { margin-bottom: 0; }
 
     @media (max-width: 600px) {
-      .hero { padding: 44px 18px 28px; }
+      .terms-hero { padding: 120px 18px 28px; }
       main { width: calc(100% - 24px); margin-bottom: 42px; font-size: 15px; }
       .policy-card { border-radius: 10px; }
     }
@@ -213,7 +213,7 @@
   <!-- =============================================
        PAGE CONTENT
        ============================================= -->
-  <section class="hero" aria-labelledby="page-title">
+  <section class="terms-hero" aria-labelledby="page-title">
     <p class="eyebrow">Before you travel</p>
     <h1 id="page-title">Terms &amp; Conditions</h1>
     <p>Please read our cancellation and refund policy and the conditions that apply when booking a Trip Vihara tour.</p>
