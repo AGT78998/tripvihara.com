@@ -415,7 +415,7 @@ a {
 /* ── Enforce identical height across all story images ── */
 .story-image img {
     width: 100%;
-    height: 722px;
+    height: 450px;
     /* <--- Adjust this single number to change the length for ALL 3 images at once */
     object-fit: cover;
     /* Crops neatly so pictures don't stretch or distort */
