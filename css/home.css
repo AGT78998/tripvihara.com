@@ -321,7 +321,7 @@ a {
     margin: 0 auto;
 }
 
-.claim-text {
+/* .claim-text {
        
     font-family: "Cormorant Garamond", serif;
     font-weight: 600;
@@ -334,7 +334,7 @@ a {
     letter-spacing: 0.01em;
 
     color: #2B1D0E;
-}
+} */
 
 /* .claim-text {
     font-family: Inter, sans-serif;
@@ -439,18 +439,14 @@ a {
 }
 
 .claim-text,
-.story-content p {
-
+.story-content p,
+.guardian-text,
+.heritage-intro {
     font-family: Inter, sans-serif;
-
     font-size: 16px;
-
     font-weight: 400;
-
     line-height: 1.8;
-
     color: #6B4F3A;
-
 }
 
 .claim-text {
@@ -530,16 +526,6 @@ a {
 }
 
 .guardian-text {
-
-    font-family: Inter, sans-serif;
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    line-height: 1.7;
-
-    color: #2B1D0E;
 
     margin-bottom: 28px;
 
@@ -624,19 +610,6 @@ a {
 
 }
 
-.heritage-intro {
-
-    font-family: Inter, sans-serif;
-
-    font-size: 22px;
-
-    font-weight: 400;
-
-    line-height: 1.7;
-
-    color: #2B1D0E;
-
-}
 
 .heritage-grid {
 
@@ -1093,11 +1066,11 @@ a {
 .claim-container {
     max-width: 77%;
 }
-
+/* 
 .claim-text {
     font-size: 24px;
     line-height: 1.4;
-}
+} */
 
 .story-section {
     padding: 40px 0;
