@@ -502,17 +502,13 @@ a {
 .about-image {
 
     width: 82% !important;
-    transform: translateY(70px);
+    /* transform: translateY(70px); */
 }
 
 .about-header {
-
     max-width: 980px;
-
-    margin: 0 auto 100px;
-
+    margin: 0 auto 40px;    /* was 100px */
     padding: 0 20px;
-
     text-align: center;
 }
 
@@ -565,7 +561,7 @@ a {
 .about-content {
 
     width: 100%;
-    padding-top: 70px;
+    padding-top: 0;
 }
 
 .about-more {
@@ -664,7 +660,7 @@ a {
     background: #F4EBDD;
 
     padding: 45px 0 140px;
-    margin-top: -77px;
+    margin-top: 0;
 }
 
 .guardian-container {
