@@ -449,9 +449,9 @@ a {
     color: #6B4F3A;
 }
 
-.claim-text {
+/* .claim-text {
     font-size: 14px;   /* only affects Namaste text */
-}
+} */
 
 .story-ending {
 
@@ -1024,7 +1024,7 @@ a {
 
     .claim-text {
     font-family: Inter, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
     letter-spacing: normal;
