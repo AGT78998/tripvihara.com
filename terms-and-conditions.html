@@ -19,152 +19,152 @@
   <!-- Page-specific styles. Keep this AFTER home.css. -->
 
   <style>
-  :root {
-    --ink: #2B1D0E;
-    --muted: #6B4F3A;
-    --accent: #C8922A;
-    --accent-dark: #B8831F;
-    --paper: #F4EBDD;
-    --surface: #FFFCF7;
-    --line: #E0D4C0;
-    --soft: #F4EBDD;
-  }
+    :root {
+      --ink: #2B1D0E;
+      --muted: #6B4F3A;
+      --accent: #C8922A;
+      --accent-dark: #B8831F;
+      --paper: #F4EBDD;
+      --surface: #FFFCF7;
+      --line: #E0D4C0;
+      --soft: #F4EBDD;
+    }
 
-  html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
 
-  body { background: var(--paper); }
+    body { background: var(--paper); }
 
-  .terms-hero,
-  main {
-    color: var(--muted);
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.8;
-  }
+    .terms-hero,
+    main {
+      color: var(--muted);
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+    }
 
-  main a { color: var(--accent); }
+    main a { color: var(--accent); }
 
-  .terms-hero {
-    padding: 60px 20px 35px;
-    text-align: center;
-  }
+    .terms-hero {
+      padding: 60px 20px 35px;
+      text-align: center;
+    }
 
-  .eyebrow {
-    margin: 0 0 12px;
-    color: var(--accent);
-    font-family: Inter, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-  .terms-hero h1,
-  .policy-card h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.2;
-  }
+    .terms-hero h1,
+    .policy-card h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+    }
 
-  .terms-hero h1 {
-    margin: 0;
-    font-size: 40px;
-  }
+    .terms-hero h1 {
+      margin: 0;
+      font-size: 40px;
+    }
 
-  .terms-hero p {
-    max-width: 650px;
-    margin: 15px auto 0;
-    color: var(--muted);
-    font-size: 16px;
-  }
+    .terms-hero p {
+      max-width: 650px;
+      margin: 15px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
 
-  main {
-    width: min(900px, calc(100% - 32px));
-    margin: 0 auto 64px;
-  }
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 0 auto 64px;
+    }
 
-  .policy-card {
-    padding: clamp(22px, 4vw, 42px);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 0;
-    box-shadow: none;
-  }
+    .policy-card {
+      padding: clamp(22px, 4vw, 42px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+    }
 
-  .section-heading {
-    margin: 0 0 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line);
-    font-size: 32px;
-  }
+    .section-heading {
+      margin: 0 0 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 32px;
+    }
 
-  main h3 {
-    margin: 26px 0 10px;
-    color: var(--ink);
-    font-family: Inter, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.4;
-  }
+    main h3 {
+      margin: 26px 0 10px;
+      color: var(--ink);
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
 
-  main strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
+    main strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
-  main p { margin: 0 0 14px; }
+    main p { margin: 0 0 14px; }
 
-  main ul,
-  main ol {
-    margin: 8px 0 20px;
-    padding-left: 25px;
-  }
+    main ul,
+    main ol {
+      margin: 8px 0 20px;
+      padding-left: 25px;
+    }
 
-  main li { padding-left: 4px; margin: 7px 0; }
-  main li::marker { color: var(--accent); font-weight: 600; }
+    main li { padding-left: 4px; margin: 7px 0; }
+    main li::marker { color: var(--accent); font-weight: 600; }
 
-  .policy-note {
-    margin-top: 24px;
-    padding: 16px 18px;
-    border-left: 3px solid var(--accent);
-    background: var(--soft);
-  }
+    .policy-note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--soft);
+    }
 
-  .policy-note p:last-child { margin-bottom: 0; }
+    .policy-note p:last-child { margin-bottom: 0; }
 
-  /* Footer links */
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    margin: 0 0 14px;
-  }
+    /* Footer links */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin: 0 0 14px;
+    }
 
-  .footer-links a {
-    font-family: Inter, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.8;
-    color: rgba(245, 240, 230, .80);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
+    .footer-links a {
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(245, 240, 230, .80);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
 
-  .footer-links a:hover {
-    opacity: 0.75;
-    text-decoration: underline;
-  }
+    .footer-links a:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
 
-  @media (max-width: 600px) {
-    .terms-hero { padding: 60px 18px 28px; }
-    .terms-hero h1 { font-size: 28px; }
-    .section-heading { font-size: 24px; }
-    main { width: calc(100% - 24px); margin-bottom: 42px; }
-  }
-</style>
+    @media (max-width: 600px) {
+      .terms-hero { padding: 60px 18px 28px; }
+      .terms-hero h1 { font-size: 28px; }
+      .section-heading { font-size: 24px; }
+      main { width: calc(100% - 24px); margin-bottom: 42px; }
+    }
+  </style>
 
 </head>
 
