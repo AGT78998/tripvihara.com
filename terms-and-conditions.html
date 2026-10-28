@@ -10,151 +10,162 @@
   <!-- ===== FONTS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Shared site styles (navbar + footer). Use the same ?v= number as your home page. -->
   <link rel="stylesheet" href="css/home.css">
 
   <!-- Page-specific styles. Keep this AFTER home.css. -->
+
   <style>
-    :root {
-      --ink: #3d3027;
-      --muted: #786758;
-      --accent: #8a5637;
-      --accent-dark: #68402b;
-      --paper: #fbf8f3;
-      --surface: #ffffff;
-      --line: #e9dfd4;
-      --soft: #f3ece3;
-    }
+  :root {
+    --ink: #2B1D0E;
+    --muted: #6B4F3A;
+    --accent: #C8922A;
+    --accent-dark: #B8831F;
+    --paper: #F4EBDD;
+    --surface: #FFFCF7;
+    --line: #E0D4C0;
+    --soft: #F4EBDD;
+  }
 
-    html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; }
 
-    body { background: var(--paper); }
+  body { background: var(--paper); }
 
-    /* Typography is scoped to the page content so it never affects the navbar/footer */
-    .terms-hero,
-    main {
-      color: var(--ink);
-      font-family: "Jost", sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-    }
+  .terms-hero,
+  main {
+    color: var(--muted);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
 
-    main a { color: var(--accent-dark); }
+  main a { color: var(--accent); }
 
-    .terms-hero {
-      padding: 35px 20px 35px;
-      text-align: center;
-    }
+  .terms-hero {
+    padding: 60px 20px 35px;
+    text-align: center;
+  }
 
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-    }
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
 
-    .terms-hero h1,
-    .policy-card h2 {
-      font-family: "Cormorant Garamond", serif;
-      color: var(--accent-dark);
-      line-height: 1.15;
-    }
+  .terms-hero h1,
+  .policy-card h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
 
-    .terms-hero h1 {
-      margin: 0;
-      font-size: clamp(40px, 6vw, 58px);
-      font-weight: 600;
-    }
+  .terms-hero h1 {
+    margin: 0;
+    font-size: 40px;
+  }
 
-    .terms-hero p {
-      max-width: 650px;
-      margin: 15px auto 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
+  .terms-hero p {
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
 
-    main {
-      width: min(900px, calc(100% - 32px));
-      margin: 0 auto 64px;
-    }
+  main {
+    width: min(900px, calc(100% - 32px));
+    margin: 0 auto 64px;
+  }
 
-    .policy-card {
-      padding: clamp(22px, 4vw, 42px);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: 0 12px 36px rgba(61, 48, 39, .045);
-    }
+  .policy-card {
+    padding: clamp(22px, 4vw, 42px);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+  }
 
-    .section-heading {
-      margin: 0 0 20px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-      font-size: clamp(30px, 4vw, 38px);
-      font-weight: 600;
-    }
+  .section-heading {
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 32px;
+  }
 
-    main h3 {
-      margin: 26px 0 10px;
-      color: var(--ink);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
+  main h3 {
+    margin: 26px 0 10px;
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
 
-    main p { margin: 0 0 14px; }
+  main strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
 
-    main ul,
-    main ol {
-      margin: 8px 0 20px;
-      padding-left: 25px;
-    }
+  main p { margin: 0 0 14px; }
 
-    main li { padding-left: 4px; margin: 7px 0; }
-    main li::marker { color: var(--accent); font-weight: 700; }
+  main ul,
+  main ol {
+    margin: 8px 0 20px;
+    padding-left: 25px;
+  }
 
-    .policy-note {
-      margin-top: 24px;
-      padding: 16px 18px;
-      border-left: 3px solid var(--accent);
-      background: var(--soft);
-      border-radius: 0 8px 8px 0;
-    }
+  main li { padding-left: 4px; margin: 7px 0; }
+  main li::marker { color: var(--accent); font-weight: 600; }
 
-    .policy-note p:last-child { margin-bottom: 0; }
+  .policy-note {
+    margin-top: 24px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--accent);
+    background: var(--soft);
+  }
 
-    @media (max-width: 600px) {
-      .terms-hero { padding: 120px 18px 28px; }
-      main { width: calc(100% - 24px); margin-bottom: 42px; font-size: 15px; }
-      .policy-card { border-radius: 10px; }
-    }
+  .policy-note p:last-child { margin-bottom: 0; }
 
-    /* Footer links (same as home page) */
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px 24px;
-      margin: 0 0 14px;
-    }
+  /* Footer links */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 0 0 14px;
+  }
 
-    .footer-links a {
-      color: inherit;
-      text-decoration: none;
-      font: inherit;
-      transition: opacity 0.2s ease;
-    }
+  .footer-links a {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(245, 240, 230, .80);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
 
-    .footer-links a:hover {
-      opacity: 0.75;
-      text-decoration: underline;
-    }
-  </style>
+  .footer-links a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .terms-hero { padding: 60px 18px 28px; }
+    .terms-hero h1 { font-size: 28px; }
+    .section-heading { font-size: 24px; }
+    main { width: calc(100% - 24px); margin-bottom: 42px; }
+  }
+</style>
+
 </head>
 
 <body>
