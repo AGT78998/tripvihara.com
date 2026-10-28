@@ -916,7 +916,7 @@ a {
 }
 
 /* this si to recuce the circle image for mob screen. */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .round-images {
         flex-wrap: nowrap;
         gap: 12px;
@@ -928,7 +928,7 @@ a {
         height: auto;
         aspect-ratio: 1 / 1;
     }
-}
+} */
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
