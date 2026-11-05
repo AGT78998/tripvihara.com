@@ -896,15 +896,15 @@ a {
 
     .story-row {
         gap: 32px;
-        padding: 0 24px;
+        padding: 0;
     }
 
     .story-left .story-image,
     .story-right .story-image,
     .story-right-large .story-image {
         flex: 1.5;
-        width: calc(100% - 96px);
-        max-width: calc(100% - 96px);
+        width: 100%;
+        max-width: 100%;
     }
 
     .story-left .story-content,
