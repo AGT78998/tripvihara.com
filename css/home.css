@@ -916,19 +916,21 @@ a {
 }
 
 /* this si to recuce the circle image for mob screen. */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .round-images {
-        flex-wrap: nowrap;
-        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
         padding: 0 16px;
     }
 
     .round-images img {
-        width: calc((100% - 24px) / 3);
+        width: calc((100% - 16px) / 2);
+        max-width: 160px;
         height: auto;
         aspect-ratio: 1 / 1;
     }
-} */
+}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
